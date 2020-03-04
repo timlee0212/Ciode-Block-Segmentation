@@ -122,10 +122,10 @@ always@(*) begin
 						else if(req_crc_q==1 && cnt_cb_q == 16'h0015)	next_state <= OUT_CRC;
 						else next_state <= READ_DATA;
 		
-		OUT_CRC:		if(cnt_cb_q == 5'b00001) next_state <= NEXT_BLOCK;
+		OUT_CRC:		if(cnt_cb_q == 16'h0001) next_state <= NEXT_BLOCK;
 						else next_state <= OUT_CRC;
 		
-		NEXT_BLOCK:	if( (cm_q | cp_q) == 2'b00) next_state <= IDLE;
+		NEXT_BLOCK:	if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= IDLE;
 						else next_state <= LOAD_SIZE;
 		
 		//For Robustness
@@ -172,7 +172,7 @@ always@(*) begin
 		IDLE:	begin
 						init_crc <= 1'b1;
 						ena_crc	<= 1'b1;
-						req_crc_in	<=	1'b0;
+						req_crc_in	<=	1'b1;
 						req_crc_load<=	1'b1;
 						req_crc_en	<=	1'b1;
 				end
@@ -191,8 +191,9 @@ always@(*) begin
 						cnt_fl_in<= size[15:0];
 						cnt_fl_load<=		1'b1;
 						
-						if ((size[19:18] | size[17:16]) == 2'b01) begin
-							req_crc_in <= 1'b1;
+						if ((size[19:18]==2'b00 && size[17:16]== 2'b01) ||
+							(size[19:18]==2'b01 && size[17:16]== 2'b00)) begin
+							req_crc_in <= 1'b0;
 							req_crc_en <= 1'b1;
 							req_crc_load <= 1'b1;
 						end
@@ -209,7 +210,7 @@ always@(*) begin
 							
 						
 						//Decide According Number of Blocks
-						if (cp_q == 2'b10) begin
+						if (cp_q == 2'b10 && cm_q == 2'b00) begin
 							cp_in 	<= 2'b01;
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
@@ -218,8 +219,8 @@ always@(*) begin
 							cnt_cb_load	<=	1'b1;
 							block_size <= 1'b1;
 						end
-						else if(cp_q == 2'b01) begin
-							cp_in 	<= 2'b01;
+						else if(cp_q == 2'b01 && cm_q == 2'b00) begin
+							cp_in 	<= 2'b00;
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
 							

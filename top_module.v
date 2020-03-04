@@ -22,7 +22,7 @@ wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
 
 wire[15:0] size_fifo_data;
 
-wire padding_mux_out, crc_out;
+wire padding_mux_out;
 wire[23:0] crc_out;
 wire padding_mux_sel, crc_mux_sel, crc_init, crc_ena_com, crc_nshift;
 
@@ -76,7 +76,7 @@ data_fsm datapath_control_unit(
 
     .init_crc(crc_init),
 	.ena_crc(crc_ena_com),
-    .nshift_crc(crc_nshift)
+    .nshift_crc(crc_nshift),
 
 	.read_data_fifo(data_fifo_rd),
 	.read_size_fifo(size_fifo_rd),
