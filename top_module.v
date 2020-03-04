@@ -3,7 +3,7 @@ module cb_seg(
     input wire reset,
     input wire tb_in,
     input wire wreq_data,        //Write Request of the Input TB buffer
-    input wire tb_size_in,  
+    input wire[15:0] tb_size_in,  
     input wire wreq_size,
     //TODO: A signal from Transfer Layer to initilize the computation?
 
@@ -18,7 +18,9 @@ module cb_seg(
 );
 
 wire data_fifo_out;
-wire data_fifo_rd, data_fifo_empty;
+wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
+
+wire[15:0] size_fifo_data;
 
 wire padding_mux_out, crc_out;
 wire[23:0] crc_out;
@@ -65,9 +67,9 @@ data_fsm datapath_control_unit(
     .reset(reset),
 
 	.empty_data_fifo(data_fifo_empty),
-	.empty_size_fifo(),
+	.empty_size_fifo(size_fifo_empty),
 
-	.size(),
+	.size(size_fifo_data),
 
 	.mux_fill(padding_mux_sel),
 	.mux_crc(crc_mux_sel),
@@ -77,7 +79,7 @@ data_fsm datapath_control_unit(
     .nshift_crc(crc_nshift)
 
 	.read_data_fifo(data_fifo_rd),
-	.read_size_fifo(),
+	.read_size_fifo(size_fifo_rd),
 
 	.block_size(cb_size),
 
@@ -88,5 +90,15 @@ data_fsm datapath_control_unit(
 );
 
 //Block Size Computation
+
+CRC_size  cb_size_computation(
+	.aclr(reset),
+	.clk(clk),
+	.w(wreq_size),
+	.inputSize(tb_size_in),
+	.r_out(size_fifo_rd),
+	.empty_out(size_fifo_empty),
+	.data_out(size_fifo_data)
+);
 
 endmodule
