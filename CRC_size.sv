@@ -61,7 +61,7 @@ module CRC_size  (input logic aclr,
 						output logic empty_out,
 						output logic [19:0] data_out);
 						
-	logic empty, full;
+	logic empty, full, r;
 	logic [15:0] B;
 	// reading inputSize from 16-bit FIFO
 	fifo16 fifo16_inst (.aclr(aclr), .clock(clk), .data(inputSize), .rdreq(r), 

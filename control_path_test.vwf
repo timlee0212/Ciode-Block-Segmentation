@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -68,7 +70,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 50000.0;
+	DATA_DURATION = 2000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -445,13 +447,83 @@ SIGNAL("stop")
 	PARENT = "";
 }
 
+SIGNAL("register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+}
+
+SIGNAL("register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+}
+
+SIGNAL("register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+}
+
+SIGNAL("register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+}
+
+SIGNAL("register_1bit:req_crc|lpm_shiftreg:LPM_SHIFTREG_component|dffs")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
 TRANSITION_LIST("block_size")
 {
 	NODE
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -462,7 +534,7 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 5000;
+			REPEAT = 200;
 			LEVEL 0 FOR 5.0;
 			LEVEL 1 FOR 5.0;
 		}
@@ -475,7 +547,7 @@ TRANSITION_LIST("crc")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -484,7 +556,7 @@ TRANSITION_LIST("empty_data_fifo")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -493,7 +565,10 @@ TRANSITION_LIST("empty_size_fifo")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 890.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 1030.0;
 	}
 }
 
@@ -503,7 +578,7 @@ TRANSITION_LIST("ena_crc")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -513,7 +588,7 @@ TRANSITION_LIST("filling")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -523,7 +598,7 @@ TRANSITION_LIST("init_crc")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -533,7 +608,7 @@ TRANSITION_LIST("mux_crc")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -543,7 +618,7 @@ TRANSITION_LIST("mux_fill")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -553,7 +628,7 @@ TRANSITION_LIST("nshift_crc")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -563,7 +638,7 @@ TRANSITION_LIST("read_data_fifo")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -573,7 +648,7 @@ TRANSITION_LIST("read_size_fifo")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -583,7 +658,7 @@ TRANSITION_LIST("reset")
 	{
 		REPEAT = 1;
 		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 49970.0;
+		LEVEL 0 FOR 1970.0;
 	}
 }
 
@@ -592,7 +667,7 @@ TRANSITION_LIST("size[19]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -601,9 +676,11 @@ TRANSITION_LIST("size[18]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 910.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1020.0;
 	}
 }
 
@@ -612,7 +689,7 @@ TRANSITION_LIST("size[17]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -621,9 +698,9 @@ TRANSITION_LIST("size[16]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1940.0;
 	}
 }
 
@@ -632,7 +709,7 @@ TRANSITION_LIST("size[15]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -641,7 +718,7 @@ TRANSITION_LIST("size[14]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -650,7 +727,7 @@ TRANSITION_LIST("size[13]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -659,7 +736,7 @@ TRANSITION_LIST("size[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -668,7 +745,7 @@ TRANSITION_LIST("size[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -677,7 +754,7 @@ TRANSITION_LIST("size[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -686,7 +763,7 @@ TRANSITION_LIST("size[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -695,7 +772,7 @@ TRANSITION_LIST("size[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -704,7 +781,7 @@ TRANSITION_LIST("size[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -713,7 +790,7 @@ TRANSITION_LIST("size[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -722,7 +799,7 @@ TRANSITION_LIST("size[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -731,7 +808,7 @@ TRANSITION_LIST("size[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -740,9 +817,7 @@ TRANSITION_LIST("size[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -751,9 +826,9 @@ TRANSITION_LIST("size[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 970.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1020.0;
 	}
 }
 
@@ -762,9 +837,9 @@ TRANSITION_LIST("size[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1940.0;
 	}
 }
 
@@ -773,9 +848,9 @@ TRANSITION_LIST("size[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 49910.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1940.0;
 	}
 }
 
@@ -785,7 +860,7 @@ TRANSITION_LIST("start")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -795,7 +870,52 @@ TRANSITION_LIST("stop")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 49001.0;
+		LEVEL 0 FOR 1001.0;
+	}
+}
+
+TRANSITION_LIST("register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("register_1bit:req_crc|lpm_shiftreg:LPM_SHIFTREG_component|dffs")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 2000.0;
 	}
 }
 
@@ -1150,6 +1270,75 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 36;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 37;
+	TREE_LEVEL = 0;
+	CHILDREN = 38, 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 38;
+	TREE_LEVEL = 1;
+	PARENT = 37;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cm|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 39;
+	TREE_LEVEL = 1;
+	PARENT = 37;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 40;
+	TREE_LEVEL = 0;
+	CHILDREN = 41, 42;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 41;
+	TREE_LEVEL = 1;
+	PARENT = 40;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_2bits:cp|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 42;
+	TREE_LEVEL = 1;
+	PARENT = 40;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "register_1bit:req_crc|lpm_shiftreg:LPM_SHIFTREG_component|dffs";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 43;
 	TREE_LEVEL = 0;
 }
 

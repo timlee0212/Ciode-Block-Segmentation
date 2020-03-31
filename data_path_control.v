@@ -16,28 +16,32 @@ module data_fsm(
 
 	output reg read_data_fifo,
 	output reg read_size_fifo,
+	
+	output reg wreq_itl_fifo,
+	output reg wreq_enc_fifo,
 
 	output reg block_size,
 
 	output reg start,
 	output reg filling,
-	output reg stop,
+	//output reg stop,
 	output reg crc
 );
 
 //FSM State Encoding
 //Following the Quartus Encoding Scheme
-parameter IDLE			=	8'b00000000,
-			 READ_REQ	=	8'b00000011,
-			 READ_SIZE	=	8'b00000101,
-			 LOAD_SIZE	=	8'b00001001,
-			 FILLING		=	8'b00010001,
-			 READ_DATA	=	8'b00100001,
-			 OUT_CRC		=	8'b01000001,
-			 NEXT_BLOCK	=	8'b10000001;
+parameter IDLE			=	9'b000000000,
+			 READ_REQ	=	9'b000000011,
+			 READ_SIZE	=	9'b000000101,
+			 LOAD_SIZE	=	9'b000001001,
+			 SEND_SIZE	=  9'b000010001,
+			 FILLING		=	9'b000100001,
+			 READ_DATA	=	9'b001000001,
+			 OUT_CRC		=	9'b010000001,
+			 NEXT_BLOCK	=	9'b100000001;
 			 
 
-reg[7:0] state_reg, next_state;
+reg[8:0] state_reg, next_state;
 
 reg[15:0] cnt_fl_in, cnt_cb_in;
 wire[15:0] cnt_fl_q, cnt_cb_q;
@@ -112,17 +116,19 @@ always@(*) begin
 						
 		READ_SIZE:	next_state <= LOAD_SIZE;
 		
-		LOAD_SIZE:	if(cnt_fl_q == 16'h0000) next_state <= READ_DATA;
+		LOAD_SIZE:	next_state <= SEND_SIZE;
+		
+		SEND_SIZE:	if(cnt_fl_q == 16'h0000) next_state <= READ_DATA;
 						else next_state <= FILLING;
 						
-		FILLING:		if(cnt_fl_q == 16'h0001) next_state <= READ_DATA;
+		FILLING:		if(cnt_fl_q == 16'h0000) next_state <= READ_DATA;
 						else next_state <= FILLING;
 		
-		READ_DATA:	if(req_crc_q==0 && cnt_cb_q==16'h0001) next_state <= NEXT_BLOCK;
-						else if(req_crc_q==1 && cnt_cb_q == 16'h0015)	next_state <= OUT_CRC;
+		READ_DATA:	if(req_crc_q==0 && cnt_cb_q==16'h0002) next_state <= NEXT_BLOCK;
+						else if(req_crc_q==1 && cnt_cb_q == 16'h0019)	next_state <= OUT_CRC;
 						else next_state <= READ_DATA;
 		
-		OUT_CRC:		if(cnt_cb_q == 16'h0001) next_state <= NEXT_BLOCK;
+		OUT_CRC:		if(cnt_cb_q == 16'h0002) next_state <= NEXT_BLOCK;
 						else next_state <= OUT_CRC;
 		
 		NEXT_BLOCK:	if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= IDLE;
@@ -148,7 +154,7 @@ always@(*) begin
 	
 	start			<= 	1'b0;
 	filling		<= 	1'b0;
-	stop			<=		1'b0;
+	//stop			<=		1'b0;
 	crc			<=		1'b0;
 	
 	cnt_fl_in	<= 	16'h0000;
@@ -161,6 +167,9 @@ always@(*) begin
 	req_crc_in	<=		1'b0;
 	req_crc_load<=		1'b0;
 	req_crc_en	<=		1'b0;
+	
+	wreq_itl_fifo <= 	1'b1;
+	wreq_enc_fifo <= 	1'b1;
 
 	cm_in			<=		2'b00;
 	cm_load		<=		1'b0;
@@ -175,9 +184,15 @@ always@(*) begin
 						req_crc_in	<=	1'b1;
 						req_crc_load<=	1'b1;
 						req_crc_en	<=	1'b1;
+						wreq_itl_fifo <= 	1'b0;
+						wreq_enc_fifo <= 	1'b0;
 				end
 						
-		READ_REQ:	read_size_fifo <= 1'b1;
+		READ_REQ:	begin
+						read_size_fifo <= 1'b1;
+						wreq_itl_fifo <= 	1'b0;
+						wreq_enc_fifo <= 	1'b0;
+				end
 		
 		READ_SIZE:begin
 						cm_in		<= size[17:16];
@@ -197,17 +212,12 @@ always@(*) begin
 							req_crc_en <= 1'b1;
 							req_crc_load <= 1'b1;
 						end
+						
+						wreq_itl_fifo <= 	1'b0;
+						wreq_enc_fifo <= 	1'b0;
 					end
 		
-		LOAD_SIZE:begin
-						if(cnt_fl_q == 16'h0000) begin 
-							read_data_fifo <=	1'b1;		//Pre-assert read request
-							cnt_cb_en		<= 1'b1;
-						end
-						else	begin 
-							cnt_fl_en		<= 1'b1;
-						end
-							
+		LOAD_SIZE:begin						
 						
 						//Decide According Number of Blocks
 						if (cp_q == 2'b10 && cm_q == 2'b00) begin
@@ -215,36 +225,60 @@ always@(*) begin
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
 							
-							cnt_cb_in 	<= 16'h0c64;	//6144 bits
+							cnt_cb_in 	<= 16'h1800;	//6144 bits
 							cnt_cb_load	<=	1'b1;
-							block_size <= 1'b1;
 						end
 						else if(cp_q == 2'b01 && cm_q == 2'b00) begin
 							cp_in 	<= 2'b00;
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
 							
-							cnt_cb_in <= 16'h0c64;	//6144 bits
+							cnt_cb_in <= 16'h1800;	//6144 bits
 							cnt_cb_load	<=	1'b1;
-							block_size <= 1'b1;
+							
 						end
 						else if(cm_q == 2'b01) begin
 							cm_in 	<= 2'b00;
 							cm_load 	<=	1'b1;
 							cm_en		<=	1'b1;
 							
-							cnt_cb_in <= 16'h022e;	//1054 bits
+							cnt_cb_in <= 16'h0420;	//1056 bits
 							cnt_cb_load	<=	1'b1;
-							block_size <= 1'b0;
 						end
 						start 	<= 1'b1;
+
+					end
+					
+		SEND_SIZE: begin
+						if(cnt_fl_q == 16'h0000) begin 
+							read_data_fifo <=	1'b1;		//Pre-assert read request
+						end
+						else	begin 
+							cnt_fl_en		<= 1'b1;
+						end
+						
+						if(cnt_cb_q == 16'h1800)
+							block_size <= 1'b1;
+						else
+							block_size <= 1'b0;
+						
+						cnt_cb_en<= 1'b1;
+						nshift_crc <= 1'b1;
 					end
 						
 		FILLING:	begin
 						mux_fill <= 1'b0;
 						mux_crc	<=	1'b0;
 						filling 	<=	1'b1;
-						cnt_fl_en<= 1'b1;
+						ena_crc 	<= 1'b1;
+						nshift_crc <= 1'b1;
+						cnt_cb_en		<= 1'b1;
+						if(cnt_fl_q == 16'h0000) 
+						begin
+							cnt_fl_en<= 1'b0;		//Aoid Underflow
+							read_data_fifo <=	1'b1;		//Pre-assert read request
+						end
+						else cnt_fl_en<= 1'b1;
 					end
 		
 		READ_DATA:begin
@@ -253,8 +287,14 @@ always@(*) begin
 						init_crc <= 1'b0;
 						ena_crc 	<= 1'b1;
 						nshift_crc <= 1'b1;
-						read_data_fifo <=	1'b1;
 						cnt_cb_en	<=	1'b1;
+						if((req_crc_q==0 && cnt_cb_q==16'h0001) 
+							|| (req_crc_q==1 && cnt_cb_q == 16'h0019))
+							read_data_fifo <=	1'b0;	
+						else
+							read_data_fifo <=	1'b1;
+							
+						//if(req_crc_q==1 && cnt_cb_q == 16'h0019) nshift_crc <= 1'b0;
 					end
 		
 		OUT_CRC:	begin
@@ -267,7 +307,15 @@ always@(*) begin
 						crc		<= 1'b1;
 					end
 		
-		NEXT_BLOCK:	stop <= 1'b1;
+		NEXT_BLOCK:	begin
+				if(req_crc_q==1) begin 
+					mux_crc <= 1'b1;
+					crc <= 1'b1; //For the last bit of CRC
+				end
+				//stop <= 1'b1;
+				init_crc <= 1'b1;
+				ena_crc 	<= 1'b1;
+				end
 	endcase
 end
 
