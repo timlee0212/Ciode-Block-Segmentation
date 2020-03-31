@@ -1,12 +1,12 @@
 # -------------------------------------------------------------------------- #
 #
 # Copyright (C) 2018  Intel Corporation. All rights reserved.
-# Your use of Intel Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Intel Program License 
+# Your use of Intel Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Intel Program License
 # Subscription Agreement, the Intel Quartus Prime License Agreement,
 # the Intel FPGA IP License Agreement, or other applicable license
 # agreement, including, without limitation, that your use is for
@@ -25,7 +25,7 @@
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		CodeBlockSegmentation_assignment_defaults.qdf
+#		HardwareTB_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -37,10 +37,10 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+set_global_assignment -name DEVICE 5CEBA4F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY cb_seg
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:08:07  FEBRUARY 27, 2020"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:11:37  MARCH 30, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
@@ -71,26 +71,22 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_crc -section_id tb_crc
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE PERFORMANCE"
+set_global_assignment -name VERILOG_FILE src/top_module.v
+set_global_assignment -name VERILOG_FILE src/data_path_control.v
+set_global_assignment -name VERILOG_FILE src/crc24.v
+set_global_assignment -name SYSTEMVERILOG_FILE src/CRC_size.sv
+set_global_assignment -name QIP_FILE IP/shiftreg.qip
+set_global_assignment -name QIP_FILE IP/register_2bits.qip
+set_global_assignment -name QIP_FILE IP/register_1bit.qip
+set_global_assignment -name QIP_FILE IP/mux_ip.qip
+set_global_assignment -name QIP_FILE IP/itl_fifo.qip
+set_global_assignment -name QIP_FILE IP/fifo20.qip
+set_global_assignment -name QIP_FILE IP/fifo16.qip
+set_global_assignment -name QIP_FILE IP/fifo_tb.qip
+set_global_assignment -name QIP_FILE IP/enc_fifo.qip
+set_global_assignment -name QIP_FILE IP/counter_16bits.qip
+set_global_assignment -name QIP_FILE IP/counter_5bits.qip
+set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_top_module.v -section_id tb_top_module
+set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_cb_seg.v -section_id tb_cb_seg
+set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_crc.v -section_id tb_crc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VERILOG_FILE top_module.v
-set_global_assignment -name SYSTEMVERILOG_FILE CRC_size.sv
-set_global_assignment -name VERILOG_FILE data_path_control.v
-set_global_assignment -name QIP_FILE mux_ip.qip
-set_global_assignment -name QIP_FILE fifo_tb.qip
-set_global_assignment -name QIP_FILE shiftreg.qip
-set_global_assignment -name VERILOG_FILE crc24.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE crc24_test.vwf
-set_global_assignment -name QIP_FILE counter_16bits.qip
-set_global_assignment -name QIP_FILE counter_5bits.qip
-set_global_assignment -name QIP_FILE register_2bits.qip
-set_global_assignment -name QIP_FILE register_1bit.qip
-set_global_assignment -name VECTOR_WAVEFORM_FILE control_path_test.vwf
-set_global_assignment -name SDC_FILE timing_constraints.sdc
-set_global_assignment -name VECTOR_WAVEFORM_FILE "top-module.vwf"
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_top_module.v -section_id tb_top_module
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_cb_seg.v -section_id tb_cb_seg
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_crc.v -section_id tb_crc
-set_global_assignment -name QIP_FILE fifo16.qip
-set_global_assignment -name QIP_FILE fifo20.qip
-set_global_assignment -name QIP_FILE itl_fifo.qip
-set_global_assignment -name QIP_FILE enc_fifo.qip

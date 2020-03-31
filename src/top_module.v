@@ -7,7 +7,7 @@ module cb_seg(
     input wire wreq_size,
     //TODO: A signal from Transfer Layer to initilize the computation?
 
-    //Control Signals
+//    //Control Signals
 //    output wire filling,
 //    output wire crc,
 //    output wire start,
@@ -32,7 +32,7 @@ module cb_seg(
 
 wire data_fifo_out;
 wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
-
+//
 wire start, crc, filling, cb_size, cb_data;
 wire wreq_itl_fifo, wreq_enc_fifo;
 
