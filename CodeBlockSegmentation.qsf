@@ -89,4 +89,5 @@ set_global_assignment -name QIP_FILE IP/counter_5bits.qip
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_top_module.v -section_id tb_top_module
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_cb_seg.v -section_id tb_cb_seg
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_crc.v -section_id tb_crc
+set_global_assignment -name QIP_FILE IP/register_8bits.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

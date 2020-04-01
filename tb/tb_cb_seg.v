@@ -4,8 +4,6 @@ reg clk, reset, tb_in, wreq_tb, wreq_size;
 
 reg[15:0] tb_size_in;
 
-wire filling, crc, start, stop, cb_size, cb_data;
-
 wire empty_itl,empty_enc;
 reg  rreq_itl, rreq_enc;
 
@@ -53,7 +51,7 @@ assign crc_itl = q_itl[1];
 assign filling_itl = q_itl[0];
 
 integer length = 7010;
-integer iterations = 7210, i, k;
+integer iterations = 7250, i, k;
 integer record_start= 0;
 reg check_out, switch = 1'b0;
 
@@ -115,10 +113,10 @@ begin
 #50	wreq_size = 1'b1;
 		tb_size_in = length;
 #15	wreq_size = 1'b0;
-#15	wreq_tb = 1'b1;
-
+#25	wreq_tb = 1'b1;
+#5
 	i = 0;
-	k = 0;
+	k = -1;
 	while (i < iterations)
 	begin
 		//#10 
@@ -130,13 +128,15 @@ begin
 		
 		if (record_start == 1'b1 & k < 1056 & switch == 1'b0)
 			begin
-				check_out = output_vector1[k];
+				if(k>-1)
+					check_out = output_vector1[k];
 				k = k + 1;
 			end
 		else if (record_start == 1'b1 &  k < 6144 & switch == 1'b1)
 			begin
-				check_out = output_vector2[k];
-				k = k + 1;
+				if(k>-1)
+					check_out = output_vector2[k];
+				k = k + 1;			
 			end		
 		else
 			check_out = 0;
@@ -146,24 +146,24 @@ begin
 
 end
 
-//initial 
-//begin
-//
-//repeat(length * 20) 
-//	begin
-//	#1
-//		if (start == 1'b1)
-//			begin
-//				record_start = 1'b1;
-//			end
-//		
-//		if (record_start == 1'b1 & stop == 1'b1)
-//			begin
-//				record_start = 1'b0;
-//				switch = 1'b1;
-//				k = 0;
-//			end
-//	end
-//end
+initial 
+begin
+
+repeat(length * 20) 
+	begin
+	#1
+		if (start_itl == 1'b1)
+			begin
+				record_start = 1'b1;
+			end
+		
+		if (record_start == 1'b1 & k==1056 & switch == 1'b0)
+			begin
+				record_start = 1'b0;
+				switch = 1'b1;
+				k = -1;
+			end
+	end
+end
 
 endmodule
