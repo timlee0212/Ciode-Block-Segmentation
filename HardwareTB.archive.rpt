@@ -1,0 +1,133 @@
+Archive Project report for HardwareTB
+Tue Mar 31 22:03:52 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Tue Mar 31 22:03:52 2020 ;
+; Revision Name          ; HardwareTB                            ;
+; Top-level Entity Name  ; mem_tb_cb_seg                         ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory E:/Courses/ECE559/CBSeg/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'E:/Courses/ECE559/hardware_tb.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'HardwareTB.archive.rpt'
+Info (23030): Evaluation of Tcl script f:/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Tue Mar 31 22:03:52 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++---------------------------+
+; Files Archived            ;
++---------------------------+
+; File Name                 ;
++---------------------------+
+; CodeBlockSegmentation.qpf ;
+; CodeBlockSegmentation.qsf ;
+; HardwareTB.qsf            ;
+; IP/counter_5bits.qip      ;
+; IP/counter_5bits.v        ;
+; IP/counter_5bits_inst.v   ;
+; IP/counter_16bits.qip     ;
+; IP/counter_16bits.v       ;
+; IP/counter_16bits_inst.v  ;
+; IP/delay2.qip             ;
+; IP/delay2.v               ;
+; IP/delay2_inst.v          ;
+; IP/enc_fifo.qip           ;
+; IP/enc_fifo.v             ;
+; IP/enc_fifo_inst.v        ;
+; IP/fifo16.qip             ;
+; IP/fifo16.v               ;
+; IP/fifo20.qip             ;
+; IP/fifo20.v               ;
+; IP/fifo_tb.qip            ;
+; IP/fifo_tb.v              ;
+; IP/fifo_tb_inst.v         ;
+; IP/itl_fifo.qip           ;
+; IP/itl_fifo.v             ;
+; IP/itl_fifo_inst.v        ;
+; IP/mux_ip.qip             ;
+; IP/mux_ip.v               ;
+; IP/mux_ip_inst.v          ;
+; IP/ref_large.qip          ;
+; IP/ref_large.v            ;
+; IP/ref_large_inst.v       ;
+; IP/ref_small.qip          ;
+; IP/ref_small.v            ;
+; IP/ref_small_inst.v       ;
+; IP/register_1bit.qip      ;
+; IP/register_1bit.v        ;
+; IP/register_1bit_inst.v   ;
+; IP/register_2bits.qip     ;
+; IP/register_2bits.v       ;
+; IP/register_2bits_inst.v  ;
+; IP/register_8bits.qip     ;
+; IP/register_8bits.v       ;
+; IP/register_8bits_inst.v  ;
+; IP/shiftreg.qip           ;
+; IP/shiftreg.v             ;
+; IP/shiftreg_inst.v        ;
+; IP/test_input.qip         ;
+; IP/test_input.v           ;
+; IP/test_input_inst.v      ;
+; mem/input_vector.mif      ;
+; mem/output_vector1.mif    ;
+; mem/output_vector2.mif    ;
+; src/crc24.v               ;
+; src/CRC_size.sv           ;
+; src/data_path_control.v   ;
+; src/htb_cbseg.v           ;
+; src/top_module.v          ;
+; tb/tb_cb_seg.v            ;
+; tb/tb_crc.v               ;
+; tb/tb_mem_htb.v           ;
+; tb/tb_top_module.v        ;
+; timing_constraints.sdc    ;
++---------------------------+
+
+

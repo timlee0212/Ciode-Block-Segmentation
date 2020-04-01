@@ -1,0 +1,136 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Courses/ECE559/CBSeg/simulation/qsim
+vcb_seg
+Z1 !s110 1583376002
+!i10b 1
+!s100 hfm8O@E]Cd81_41SLY[FJ0
+IXDn2NWjYaEj^?1U1TG0T42
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1583376000
+Z3 8CodeBlockSegmentation.vo
+Z4 FCodeBlockSegmentation.vo
+Z5 L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1583376002.000000
+Z8 !s107 CodeBlockSegmentation.vo|
+Z9 !s90 -work|work|CodeBlockSegmentation.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vcb_seg_vlg_vec_tst
+R1
+!i10b 1
+!s100 Mhh?PlLLPBL;KaLbaORQF0
+I^]PnBZ>NmJV[TZe>]76H20
+R2
+R0
+w1583375998
+Z12 8crc24_test.vwf.vt
+Z13 Fcrc24_test.vwf.vt
+Z14 L0 29
+R6
+r1
+!s85 0
+31
+R7
+Z15 !s107 crc24_test.vwf.vt|
+Z16 !s90 -work|work|crc24_test.vwf.vt|
+!i113 1
+R10
+R11
+vcrc24
+Z17 !s110 1583376576
+!i10b 1
+!s100 V^TmCnRX7ki4;4dHm=dXn0
+IcTjC;ZRBJzMYz57L2V7nF3
+R2
+R0
+w1583376575
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1583376575.000000
+R8
+R9
+!i113 1
+R10
+R11
+vcrc24_vlg_vec_tst
+R17
+!i10b 1
+!s100 m<jlXCW9>MBGLc^U6e_1I2
+Ib93kQgF[gDAB12g<TR78?3
+R2
+R0
+w1583376573
+R12
+R13
+R14
+R6
+r1
+!s85 0
+31
+!s108 1583376576.000000
+R15
+R16
+!i113 1
+R10
+R11
+vdata_fsm
+Z18 !s110 1583384629
+!i10b 1
+!s100 WIPC1i]W40ooOg7JfNf;g1
+Ig;dD:cCgokd@Rg2kRm[Nf3
+R2
+R0
+w1583384627
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z19 !s108 1583384629.000000
+R8
+R9
+!i113 1
+R10
+R11
+vdata_fsm_vlg_vec_tst
+R18
+!i10b 1
+!s100 Y?1JlBjKP^OFJTX<Ihh3X1
+IU6GoEDmoDBP8Vg80QDB@D3
+R2
+R0
+w1583384625
+8control_path_test.vwf.vt
+Fcontrol_path_test.vwf.vt
+R14
+R6
+r1
+!s85 0
+31
+R19
+!s107 control_path_test.vwf.vt|
+!s90 -work|work|control_path_test.vwf.vt|
+!i113 1
+R10
+R11

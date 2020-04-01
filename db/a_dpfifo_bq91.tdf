@@ -28,7 +28,7 @@ RETURNS ( q[7..0]);
 FUNCTION cntr_lgb (aclr, clock, cnt_en, sclr)
 RETURNS ( q[7..0]);
 
---synthesis_resources = lut 23 M10K 1 reg 37 
+--synthesis_resources = lut 7 M10K 1 reg 21 
 SUBDESIGN a_dpfifo_bq91
 ( 
 	aclr	:	input;

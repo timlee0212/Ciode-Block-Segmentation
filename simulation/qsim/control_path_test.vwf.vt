@@ -1,0 +1,219 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/05/2020 00:03:45"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          data_fsm
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module data_fsm_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg empty_data_fifo;
+reg empty_size_fifo;
+reg reset;
+reg [19:0] size;
+// wires                                               
+wire block_size;
+wire crc;
+wire ena_crc;
+wire filling;
+wire init_crc;
+wire mux_crc;
+wire mux_fill;
+wire nshift_crc;
+wire read_data_fifo;
+wire read_size_fifo;
+wire start;
+wire stop;
+
+// assign statements (if any)                          
+data_fsm i1 (
+// port map - connection between master ports and signals/registers   
+	.block_size(block_size),
+	.clk(clk),
+	.crc(crc),
+	.empty_data_fifo(empty_data_fifo),
+	.empty_size_fifo(empty_size_fifo),
+	.ena_crc(ena_crc),
+	.filling(filling),
+	.init_crc(init_crc),
+	.mux_crc(mux_crc),
+	.mux_fill(mux_fill),
+	.nshift_crc(nshift_crc),
+	.read_data_fifo(read_data_fifo),
+	.read_size_fifo(read_size_fifo),
+	.reset(reset),
+	.size(size),
+	.start(start),
+	.stop(stop)
+);
+initial 
+begin 
+#2000000 $finish;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #30000 1'b0;
+end 
+// size[ 19 ]
+initial
+begin
+	size[19] = 1'b0;
+end 
+// size[ 18 ]
+initial
+begin
+	size[18] = 1'b0;
+	size[18] = #50000 1'b1;
+	size[18] = #10000 1'b0;
+	size[18] = #910000 1'b1;
+	size[18] = #10000 1'b0;
+end 
+// size[ 17 ]
+initial
+begin
+	size[17] = 1'b0;
+end 
+// size[ 16 ]
+initial
+begin
+	size[16] = 1'b0;
+	size[16] = #50000 1'b1;
+	size[16] = #10000 1'b0;
+end 
+// size[ 15 ]
+initial
+begin
+	size[15] = 1'b0;
+end 
+// size[ 14 ]
+initial
+begin
+	size[14] = 1'b0;
+end 
+// size[ 13 ]
+initial
+begin
+	size[13] = 1'b0;
+end 
+// size[ 12 ]
+initial
+begin
+	size[12] = 1'b0;
+end 
+// size[ 11 ]
+initial
+begin
+	size[11] = 1'b0;
+end 
+// size[ 10 ]
+initial
+begin
+	size[10] = 1'b0;
+end 
+// size[ 9 ]
+initial
+begin
+	size[9] = 1'b0;
+end 
+// size[ 8 ]
+initial
+begin
+	size[8] = 1'b0;
+end 
+// size[ 7 ]
+initial
+begin
+	size[7] = 1'b0;
+end 
+// size[ 6 ]
+initial
+begin
+	size[6] = 1'b0;
+end 
+// size[ 5 ]
+initial
+begin
+	size[5] = 1'b0;
+end 
+// size[ 4 ]
+initial
+begin
+	size[4] = 1'b0;
+end 
+// size[ 3 ]
+initial
+begin
+	size[3] = 1'b0;
+end 
+// size[ 2 ]
+initial
+begin
+	size[2] = 1'b0;
+	size[2] = #970000 1'b1;
+	size[2] = #10000 1'b0;
+end 
+// size[ 1 ]
+initial
+begin
+	size[1] = 1'b0;
+	size[1] = #50000 1'b1;
+	size[1] = #10000 1'b0;
+end 
+// size[ 0 ]
+initial
+begin
+	size[0] = 1'b0;
+	size[0] = #50000 1'b1;
+	size[0] = #10000 1'b0;
+end 
+
+// empty_data_fifo
+initial
+begin
+	empty_data_fifo = 1'b0;
+end 
+
+// empty_size_fifo
+initial
+begin
+	empty_size_fifo = 1'b0;
+	empty_size_fifo = #60000 1'b1;
+	empty_size_fifo = #890000 1'b0;
+	empty_size_fifo = #20000 1'b1;
+end 
+endmodule
+

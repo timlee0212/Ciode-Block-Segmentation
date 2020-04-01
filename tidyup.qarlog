@@ -1,0 +1,59 @@
+Quartus Prime Archive log --	E:/Courses/ECE559/CBSeg/tidyup.qarlog
+
+Archive:	E:/Courses/ECE559/CBSeg/tidyup.qar
+Date:		Tue Mar 31 13:13:48 2020
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+E:/Courses/ECE559/CBSeg/CodeBlockSegmentation.qpf
+E:/Courses/ECE559/CBSeg/CodeBlockSegmentation.qsf
+E:/Courses/ECE559/CBSeg/HardwareTB.qsf
+E:/Courses/ECE559/CBSeg/IP/counter_16bits.qip
+E:/Courses/ECE559/CBSeg/IP/counter_16bits.v
+E:/Courses/ECE559/CBSeg/IP/counter_16bits_inst.v
+E:/Courses/ECE559/CBSeg/IP/counter_5bits.qip
+E:/Courses/ECE559/CBSeg/IP/counter_5bits.v
+E:/Courses/ECE559/CBSeg/IP/counter_5bits_inst.v
+E:/Courses/ECE559/CBSeg/IP/enc_fifo.qip
+E:/Courses/ECE559/CBSeg/IP/enc_fifo.v
+E:/Courses/ECE559/CBSeg/IP/enc_fifo_inst.v
+E:/Courses/ECE559/CBSeg/IP/fifo16.qip
+E:/Courses/ECE559/CBSeg/IP/fifo16.v
+E:/Courses/ECE559/CBSeg/IP/fifo20.qip
+E:/Courses/ECE559/CBSeg/IP/fifo20.v
+E:/Courses/ECE559/CBSeg/IP/fifo_tb.qip
+E:/Courses/ECE559/CBSeg/IP/fifo_tb.v
+E:/Courses/ECE559/CBSeg/IP/fifo_tb_inst.v
+E:/Courses/ECE559/CBSeg/IP/itl_fifo.qip
+E:/Courses/ECE559/CBSeg/IP/itl_fifo.v
+E:/Courses/ECE559/CBSeg/IP/itl_fifo_inst.v
+E:/Courses/ECE559/CBSeg/IP/mux_ip.qip
+E:/Courses/ECE559/CBSeg/IP/mux_ip.v
+E:/Courses/ECE559/CBSeg/IP/mux_ip_inst.v
+E:/Courses/ECE559/CBSeg/IP/register_1bit.qip
+E:/Courses/ECE559/CBSeg/IP/register_1bit.v
+E:/Courses/ECE559/CBSeg/IP/register_1bit_inst.v
+E:/Courses/ECE559/CBSeg/IP/register_2bits.qip
+E:/Courses/ECE559/CBSeg/IP/register_2bits.v
+E:/Courses/ECE559/CBSeg/IP/register_2bits_inst.v
+E:/Courses/ECE559/CBSeg/IP/shiftreg.qip
+E:/Courses/ECE559/CBSeg/IP/shiftreg.v
+E:/Courses/ECE559/CBSeg/IP/shiftreg_inst.v
+E:/Courses/ECE559/CBSeg/src/CRC_size.sv
+E:/Courses/ECE559/CBSeg/src/crc24.v
+E:/Courses/ECE559/CBSeg/src/data_path_control.v
+E:/Courses/ECE559/CBSeg/src/top_module.v
+E:/Courses/ECE559/CBSeg/tb/tb_cb_seg.v
+E:/Courses/ECE559/CBSeg/tb/tb_crc.v
+E:/Courses/ECE559/CBSeg/tb/tb_top_module.v
+E:/Courses/ECE559/CBSeg/timing_constraints.sdc
+	======= Total: 42 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Tue Mar 31 13:14:20 2020
+Source archive file:	E:/Courses/ECE559/CBSeg/tidyup.qar
+Archive was extracted into	E:/Courses/ECE559/Code-Block-Segmentation/
+		 - successfully.

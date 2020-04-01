@@ -1,0 +1,501 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Courses/ECE559/CBSeg/simulation/modelsim
+vcal_size
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1585705730
+!i10b 1
+!s100 P[lN[Ghb=dMdfMBkhO1ll3
+IKaKCUSjjNTUYUk`A:;[Vk2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 CRC_size_sv_unit
+S1
+R0
+Z5 w1583352625
+Z6 8E:/Courses/ECE559/CBSeg/src/CRC_size.sv
+Z7 FE:/Courses/ECE559/CBSeg/src/CRC_size.sv
+L0 2
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1585705730.000000
+Z10 !s107 E:/Courses/ECE559/CBSeg/src/CRC_size.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Courses/ECE559/CBSeg/src|E:/Courses/ECE559/CBSeg/src/CRC_size.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+E:/Courses/ECE559/CBSeg/src
+Z14 tCvgOpt 0
+vcb_seg
+Z15 !s110 1585705727
+!i10b 1
+!s100 MZzmg4efz=E1Q344lUAaU2
+I?afK05UQlNPj]2`kHinh90
+R3
+R0
+w1585676136
+8E:/Courses/ECE559/CBSeg/src/top_module.v
+FE:/Courses/ECE559/CBSeg/src/top_module.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z16 !s108 1585705727.000000
+!s107 E:/Courses/ECE559/CBSeg/src/top_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/src|E:/Courses/ECE559/CBSeg/src/top_module.v|
+!i113 1
+Z17 o-vlog01compat -work work
+Z18 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/CBSeg/src
+R14
+vcounter_16bits
+Z19 !s110 1585705729
+!i10b 1
+!s100 oDkN7EzW]G]oblQl@AU:X2
+IELiedLlFc_NTI17DzFg_Z1
+R3
+R0
+w1585279684
+8E:/Courses/ECE559/CBSeg/IP/counter_16bits.v
+FE:/Courses/ECE559/CBSeg/IP/counter_16bits.v
+Z20 L0 39
+R8
+r1
+!s85 0
+31
+Z21 !s108 1585705729.000000
+!s107 E:/Courses/ECE559/CBSeg/IP/counter_16bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/counter_16bits.v|
+!i113 1
+R17
+Z22 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/CBSeg/IP
+R14
+vcrc24
+R15
+!i10b 1
+!s100 @6oQgdPmBDnG3V@:eTib21
+Iz7eofkBmDLUTIP1_]jmCI0
+R3
+R0
+w1585003554
+8E:/Courses/ECE559/CBSeg/src/crc24.v
+FE:/Courses/ECE559/CBSeg/src/crc24.v
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 E:/Courses/ECE559/CBSeg/src/crc24.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/src|E:/Courses/ECE559/CBSeg/src/crc24.v|
+!i113 1
+R17
+R18
+R14
+vCRC_size
+R1
+R2
+!i10b 1
+!s100 Z7@MllEZo;cjGSf:P1==42
+ID=KZL=KTRS_3b@7bbCQG80
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 56
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@c@r@c_size
+vdata_fsm
+R15
+!i10b 1
+!s100 Xa6Z1:kj[QJ[9G<X1SgWL2
+IaVHWjY:4gIW`]foSUX8bL2
+R3
+R0
+w1585703624
+8E:/Courses/ECE559/CBSeg/src/data_path_control.v
+FE:/Courses/ECE559/CBSeg/src/data_path_control.v
+L0 1
+R8
+r1
+!s85 0
+31
+R16
+!s107 E:/Courses/ECE559/CBSeg/src/data_path_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/src|E:/Courses/ECE559/CBSeg/src/data_path_control.v|
+!i113 1
+R17
+R18
+R14
+vdelay2
+R2
+!i10b 1
+!s100 0b==T97bmLO^R6MfCJa7H2
+IhEob6YJ@XBU]mf;aPAQ:U1
+R3
+R0
+w1585688520
+8E:/Courses/ECE559/CBSeg/IP/delay2.v
+FE:/Courses/ECE559/CBSeg/IP/delay2.v
+R20
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/CBSeg/IP/delay2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/delay2.v|
+!i113 1
+R17
+R22
+R14
+vfifo16
+Z23 !s110 1585705728
+!i10b 1
+!s100 <J0PPRJzHWnG2PJQ9=7fY3
+I_iJHa09VzBOA6l@TM:0f92
+R3
+R0
+w1585277151
+8E:/Courses/ECE559/CBSeg/IP/fifo16.v
+FE:/Courses/ECE559/CBSeg/IP/fifo16.v
+R20
+R8
+r1
+!s85 0
+31
+Z24 !s108 1585705728.000000
+!s107 E:/Courses/ECE559/CBSeg/IP/fifo16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/fifo16.v|
+!i113 1
+R17
+R22
+R14
+vfifo20
+R23
+!i10b 1
+!s100 iF_E7ZQo=@EXa5BT5[Yak3
+IaVQz_RMdW3ZVZC]P0oCcg0
+R3
+R0
+w1585277258
+8E:/Courses/ECE559/CBSeg/IP/fifo20.v
+FE:/Courses/ECE559/CBSeg/IP/fifo20.v
+R20
+R8
+r1
+!s85 0
+31
+R24
+!s107 E:/Courses/ECE559/CBSeg/IP/fifo20.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/fifo20.v|
+!i113 1
+R17
+R22
+R14
+vfifo_tb
+R19
+!i10b 1
+!s100 ?]E>67>>Hb`L4NoZ09hO20
+IJki5]U_W8^3=@iGef[e?Q3
+R3
+R0
+w1583361256
+8E:/Courses/ECE559/CBSeg/IP/fifo_tb.v
+FE:/Courses/ECE559/CBSeg/IP/fifo_tb.v
+R20
+R8
+r1
+!s85 0
+31
+R24
+!s107 E:/Courses/ECE559/CBSeg/IP/fifo_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/fifo_tb.v|
+!i113 1
+R17
+R22
+R14
+vmem_tb_cb_seg
+R19
+!i10b 1
+!s100 TCf@dSh2RNV?HM9?`[[d90
+I5i;7ccfdOiW<42@C@BFWb0
+R3
+R0
+Z25 w1585705695
+Z26 8E:/Courses/ECE559/CBSeg/src/htb_cbseg.v
+Z27 FE:/Courses/ECE559/CBSeg/src/htb_cbseg.v
+L0 1
+R8
+r1
+!s85 0
+31
+R21
+Z28 !s107 E:/Courses/ECE559/CBSeg/src/htb_cbseg.v|
+Z29 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/src|E:/Courses/ECE559/CBSeg/src/htb_cbseg.v|
+!i113 1
+R17
+R18
+R14
+vmux_ip
+R23
+!i10b 1
+!s100 ;Zd<XLLKZYU<;ZP@Z602c1
+IQ>o0Z88AHC=I0_gD]jB3@2
+R3
+R0
+w1585279635
+8E:/Courses/ECE559/CBSeg/IP/mux_ip.v
+FE:/Courses/ECE559/CBSeg/IP/mux_ip.v
+R20
+R8
+r1
+!s85 0
+31
+R24
+!s107 E:/Courses/ECE559/CBSeg/IP/mux_ip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/mux_ip.v|
+!i113 1
+R17
+R22
+R14
+vread_ctl
+R19
+!i10b 1
+!s100 G9Um9e3;KCY=1IC=cMX5P3
+I7<O^5oPLi5Zhm;L3>Ye_V1
+R3
+R0
+R25
+R26
+R27
+L0 160
+R8
+r1
+!s85 0
+31
+R21
+R28
+R29
+!i113 1
+R17
+R18
+R14
+vref_large
+R19
+!i10b 1
+!s100 G5_>DT1V[Z1On=mQXEm_51
+Ie[ag]V>OhIX3oMn;OJ9FL2
+R3
+R0
+w1585676359
+8E:/Courses/ECE559/CBSeg/IP/ref_large.v
+FE:/Courses/ECE559/CBSeg/IP/ref_large.v
+R20
+R8
+r1
+!s85 0
+31
+R21
+!s107 E:/Courses/ECE559/CBSeg/IP/ref_large.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/ref_large.v|
+!i113 1
+R17
+R22
+R14
+vref_small
+R2
+!i10b 1
+!s100 [26WZ5`I22B:GhOIN:bYZ2
+IDcZBQz1FC7979cVeQgMNS2
+R3
+R0
+w1585676445
+8E:/Courses/ECE559/CBSeg/IP/ref_small.v
+FE:/Courses/ECE559/CBSeg/IP/ref_small.v
+R20
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/CBSeg/IP/ref_small.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/ref_small.v|
+!i113 1
+R17
+R22
+R14
+vregister_1bit
+R23
+!i10b 1
+!s100 2e1M8mcIKFcz[0IzBDY;e1
+IbE@h?iTUFS6dgX<UOh]aT2
+R3
+R0
+w1583361265
+8E:/Courses/ECE559/CBSeg/IP/register_1bit.v
+FE:/Courses/ECE559/CBSeg/IP/register_1bit.v
+R20
+R8
+r1
+!s85 0
+31
+R24
+!s107 E:/Courses/ECE559/CBSeg/IP/register_1bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/register_1bit.v|
+!i113 1
+R17
+R22
+R14
+vregister_2bits
+R15
+!i10b 1
+!s100 XMhz?L:7j?gYLgfa`Adn81
+IHQnaKk18I<@NT4nJFLN^<1
+R3
+R0
+w1583295614
+8E:/Courses/ECE559/CBSeg/IP/register_2bits.v
+FE:/Courses/ECE559/CBSeg/IP/register_2bits.v
+R20
+R8
+r1
+!s85 0
+31
+R16
+!s107 E:/Courses/ECE559/CBSeg/IP/register_2bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/register_2bits.v|
+!i113 1
+R17
+R22
+R14
+vregister_8bits
+R2
+!i10b 1
+!s100 03o;jK?C>YGF@KXD^hT3:0
+IR_o2jVdVz;2P@M9a`XRHh0
+R3
+R0
+w1585695588
+8E:/Courses/ECE559/CBSeg/IP/register_8bits.v
+FE:/Courses/ECE559/CBSeg/IP/register_8bits.v
+R20
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/CBSeg/IP/register_8bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/register_8bits.v|
+!i113 1
+R17
+R22
+R14
+vshiftreg
+R15
+!i10b 1
+!s100 eNjzAzBJ2F`L0NcM;JD361
+IEVlFVB>Qf03Xk?AQJX_h_3
+R3
+R0
+w1585279655
+8E:/Courses/ECE559/CBSeg/IP/shiftreg.v
+FE:/Courses/ECE559/CBSeg/IP/shiftreg.v
+R20
+R8
+r1
+!s85 0
+31
+R16
+!s107 E:/Courses/ECE559/CBSeg/IP/shiftreg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/shiftreg.v|
+!i113 1
+R17
+R22
+R14
+vtb_mem_htb
+!s110 1585705731
+!i10b 1
+!s100 RTlC01nji;6AWFcE7kYFN2
+Ij9GO=19AFA]YRNlVegGnV3
+R3
+R0
+w1585682287
+8E:/Courses/ECE559/CBSeg/tb/tb_mem_htb.v
+FE:/Courses/ECE559/CBSeg/tb/tb_mem_htb.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/CBSeg/tb/tb_mem_htb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/tb|E:/Courses/ECE559/CBSeg/tb/tb_mem_htb.v|
+!i113 1
+R17
+!s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/CBSeg/tb
+R14
+vtest_input
+R19
+!i10b 1
+!s100 Ri:kmLWUIa_KzW9bQZ;5z1
+Izh`PgOK7S>@N`5hz`<0G`1
+R3
+R0
+w1585676280
+8E:/Courses/ECE559/CBSeg/IP/test_input.v
+FE:/Courses/ECE559/CBSeg/IP/test_input.v
+R20
+R8
+r1
+!s85 0
+31
+R21
+!s107 E:/Courses/ECE559/CBSeg/IP/test_input.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/CBSeg/IP|E:/Courses/ECE559/CBSeg/IP/test_input.v|
+!i113 1
+R17
+R22
+R14
+vwrite_ctl
+R19
+!i10b 1
+!s100 zD8]a5[g1nOgB@Uh96Khl1
+IY<1kZVIRe:Km9j?0>E50C3
+R3
+R0
+R25
+R26
+R27
+L0 66
+R8
+r1
+!s85 0
+31
+R21
+R28
+R29
+!i113 1
+R17
+R18
+R14
