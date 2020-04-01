@@ -30,18 +30,19 @@ module data_fsm(
 
 //FSM State Encoding
 //Following the Quartus Encoding Scheme
-parameter IDLE			=	9'b000000000,
-			 READ_REQ	=	9'b000000011,
-			 READ_SIZE	=	9'b000000101,
-			 LOAD_SIZE	=	9'b000001001,
-			 SEND_SIZE	=  9'b000010001,
-			 FILLING		=	9'b000100001,
-			 READ_DATA	=	9'b001000001,
-			 OUT_CRC		=	9'b010000001,
-			 NEXT_BLOCK	=	9'b100000001;
+parameter IDLE			=	10'b0000000000,
+			 READ_REQ	=	10'b0000000011,
+			 READ_SIZE	=	10'b0000000101,
+			 LOAD_SIZE	=	10'b0000001001,
+			 SEND_SIZE	=  10'b0000010001,
+			 FILLING		=	10'b0000100001,
+			 READ_DATA	=	10'b0001000001,
+			 OUT_CRC		=	10'b0010000001,
+			 NEXT_BLOCK	=	10'b0100000001,
+			 WAIT_NEXT = 	10'b1000000001;
 			 
 
-reg[8:0] state_reg, next_state;
+reg[9:0] state_reg, next_state;
 
 reg[15:0] cnt_fl_in, cnt_cb_in;
 wire[15:0] cnt_fl_q, cnt_cb_q;
@@ -51,9 +52,15 @@ reg cnt_fl_en, cnt_fl_load, cnt_cb_en, cnt_cb_load;
 reg req_crc_in, req_crc_load, req_crc_en;
 wire req_crc_q;
 
+reg[7:0] wc_in;
+reg	 wc_load;
+wire[7:0] wc_q;
+
 reg cm_load, cm_en, cp_load, cp_en;
 reg[1:0] cm_in, cp_in;
 wire[1:0] cm_q, cp_q;
+
+reg[7:0] wait_cyc;
 
 //Instination IPs
 counter_16bits	cnt_fill (
@@ -82,6 +89,16 @@ register_1bit	req_crc (
 	.load ( req_crc_load),
 	.q (req_crc_q)
 	);
+	
+register_8bits	wait_cycles (
+	.aclr (reset),
+	.clock (clk),
+	.data (wc_in),
+	.enable (wc_load),
+	.load (wc_load),
+	.q (wc_q)
+	);
+
 
 register_2bits	cm (
 	.aclr (reset),
@@ -124,15 +141,22 @@ always@(*) begin
 		FILLING:		if(cnt_fl_q == 16'h0000) next_state <= READ_DATA;
 						else next_state <= FILLING;
 		
-		READ_DATA:	if(req_crc_q==0 && cnt_cb_q==16'h0002) next_state <= NEXT_BLOCK;
-						else if(req_crc_q==1 && cnt_cb_q == 16'h0019)	next_state <= OUT_CRC;
+		READ_DATA:	if(req_crc_q==0 && cnt_cb_q==16'h0001) next_state <= NEXT_BLOCK;
+						else if(req_crc_q==1 && cnt_cb_q == 16'h0018)	next_state <= OUT_CRC;
 						else next_state <= READ_DATA;
 		
-		OUT_CRC:		if(cnt_cb_q == 16'h0002) next_state <= NEXT_BLOCK;
+		OUT_CRC:		if(cnt_cb_q == 16'h0001) next_state <= NEXT_BLOCK;
 						else next_state <= OUT_CRC;
 		
-		NEXT_BLOCK:	if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= IDLE;
-						else next_state <= LOAD_SIZE;
+		NEXT_BLOCK:	next_state <= WAIT_NEXT;
+		WAIT_NEXT: begin
+						//6 Cycles Delay between two blocks
+						if(wc_q == 8'd5) begin
+							if(cm_q == 2'b00 && cp_q == 2'b00) next_state <= IDLE;
+							else next_state <= LOAD_SIZE;
+						end
+						else next_state <= WAIT_NEXT;
+				end
 		
 		//For Robustness
 		default:		next_state <= IDLE;
@@ -177,6 +201,9 @@ always@(*) begin
 	cp_in			<=		2'b00;
 	cp_load		<=		1'b0;
 	cp_en			<=		1'b0;
+	
+	wc_in 		<= 	8'b0;
+	wc_load		<= 	1'b0;
 	case(state_reg)
 		IDLE:	begin
 						init_crc <= 1'b1;
@@ -261,7 +288,7 @@ always@(*) begin
 							block_size <= 1'b1;
 						else
 							block_size <= 1'b0;
-						
+						//ena_crc 	<= 1'b1;
 						cnt_cb_en<= 1'b1;
 						nshift_crc <= 1'b1;
 					end
@@ -288,8 +315,8 @@ always@(*) begin
 						ena_crc 	<= 1'b1;
 						nshift_crc <= 1'b1;
 						cnt_cb_en	<=	1'b1;
-						if((req_crc_q==0 && cnt_cb_q==16'h0001) 
-							|| (req_crc_q==1 && cnt_cb_q == 16'h0019))
+						if((req_crc_q==0 && cnt_cb_q==16'h0000) 
+							|| (req_crc_q==1 && cnt_cb_q == 16'h0018))
 							read_data_fifo <=	1'b0;	
 						else
 							read_data_fifo <=	1'b1;
@@ -316,6 +343,12 @@ always@(*) begin
 				init_crc <= 1'b1;
 				ena_crc 	<= 1'b1;
 				end
+		WAIT_NEXT: begin
+			//Self increase without latch
+			wc_in 	<= wc_q + 1'd1;
+			wc_load 	<=	1'b1;
+			ena_crc 	<= 1'b0;
+		end
 	endcase
 end
 

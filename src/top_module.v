@@ -7,24 +7,24 @@ module cb_seg(
     input wire wreq_size,
     //TODO: A signal from Transfer Layer to initilize the computation?
 
-//    //Control Signals
-//    output wire filling,
-//    output wire crc,
-//    output wire start,
-//    //output wire stop,
-//
-//    output wire cb_size,  //1-bit 2 possible size
-//    output wire cb_data   //Serial Data Output
+    //Control Signals
+    output wire filling,
+    output wire crc,
+    output wire start,
+    //output wire stop,
+
+    output wire cb_size,  //1-bit 2 possible size
+    output wire cb_data   //Serial Data Output
 
 	 //Interleaver FIFO Ports
-	 input wire rreq_itl_fifo,
-	 output wire[4:0] q_itl_fifo, //{data, size, start}
-	 output wire empty_itl_fifo,
-	 
-	 //Encoder FIFO Ports
-	 input wire rreq_enc_fifo,
-	 output wire[2:0] q_enc_fifo,  //{data, size, start, crc, filling}
-	 output wire empty_enc_fifo
+//	 input wire rreq_itl_fifo,
+//	 output wire[4:0] q_itl_fifo, //{data, size, start}
+//	 output wire empty_itl_fifo,
+//	 
+//	 //Encoder FIFO Ports
+//	 input wire rreq_enc_fifo,
+//	 output wire[2:0] q_enc_fifo,  //{data, size, start, crc, filling}
+//	 output wire empty_enc_fifo
 	 
 	 //Debug
 	 //output wire[19:0] size_fifo_out
@@ -33,7 +33,7 @@ module cb_seg(
 wire data_fifo_out;
 wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
 //
-wire start, crc, filling, cb_size, cb_data;
+//wire start, crc, filling, cb_size, cb_data;
 wire wreq_itl_fifo, wreq_enc_fifo;
 
 wire[19:0] size_fifo_data;
@@ -80,27 +80,27 @@ crc24 crc_mod(
     .crc_out(crc_out)
 );
 
-itl_fifo	itl_fifo_inst (
-	.aclr (reset),
-	.clock (clk),
-	.data ({cb_data, cb_size, start, crc, filling}),
-	.rdreq (rreq_itl_fifo),
-	.wrreq (wreq_itl_fifo),
-	.empty (empty_itl_fifo),
-	.full (),		//Assume it won't be full
-	.q (q_itl_fifo)
-);
-
-enc_fifo	enc_fifo_inst (
-	.aclr (reset),
-	.clock (clk),
-	.data ({cb_data, cb_size, start}),
-	.rdreq (rreq_enc_fifo),
-	.wrreq (wreq_enc_fifo),
-	.empty (empty_enc_fifo),
-	.full (),
-	.q (q_enc_fifo)
-	);
+//itl_fifo	itl_fifo_inst (
+//	.aclr (reset),
+//	.clock (clk),
+//	.data ({cb_data, cb_size, start, crc, filling}),
+//	.rdreq (rreq_itl_fifo),
+//	.wrreq (wreq_itl_fifo),
+//	.empty (empty_itl_fifo),
+//	.full (),		//Assume it won't be full
+//	.q (q_itl_fifo)
+//);
+//
+//enc_fifo	enc_fifo_inst (
+//	.aclr (reset),
+//	.clock (clk),
+//	.data ({cb_data, cb_size, start}),
+//	.rdreq (rreq_enc_fifo),
+//	.wrreq (wreq_enc_fifo),
+//	.empty (empty_enc_fifo),
+//	.full (),
+//	.q (q_enc_fifo)
+//	);
 
 
 data_fsm datapath_control_unit(

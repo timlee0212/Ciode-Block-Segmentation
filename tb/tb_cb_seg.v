@@ -4,16 +4,16 @@ reg clk, reset, tb_in, wreq_tb, wreq_size;
 
 reg[15:0] tb_size_in;
 
-wire filling, crc, start, stop, cb_size, cb_data;
-
-wire empty_itl,empty_enc;
-reg  rreq_itl, rreq_enc;
-
-wire[2:0] q_enc;
-wire data_enc, size_enc, start_enc;
-
-wire[4:0] q_itl;
-wire data_itl, size_itl, start_itl, crc_itl, filling_itl;
+//wire filling, crc, start, stop, cb_size, cb_data;
+//
+//wire empty_itl,empty_enc;
+//reg  rreq_itl, rreq_enc;
+//
+//wire[2:0] q_enc;
+//wire data_enc, size_enc, start_enc;
+//
+//wire[4:0] q_itl;
+//wire data_itl, size_itl, start_itl, crc_itl, filling_itl;
 
 
 cb_seg test_obj(
@@ -24,36 +24,36 @@ cb_seg test_obj(
     .tb_size_in(tb_size_in),  
     .wreq_size(wreq_size),
 	 
-	 .rreq_itl_fifo(rreq_itl),
-	 .q_itl_fifo(q_itl), //{data, size, start}
-	 .empty_itl_fifo(empty_itl),
+//	 .rreq_itl_fifo(rreq_itl),
+//	 .q_itl_fifo(q_itl), //{data, size, start}
+//	 .empty_itl_fifo(empty_itl),
+//	 
+//	 //Encoder FIFO Ports
+//	 .rreq_enc_fifo(rreq_enc),
+//	 .q_enc_fifo(q_enc),  //{data, size, start, crc, filling}
+//	 .empty_enc_fifo(empty_enc)
 	 
-	 //Encoder FIFO Ports
-	 .rreq_enc_fifo(rreq_enc),
-	 .q_enc_fifo(q_enc),  //{data, size, start, crc, filling}
-	 .empty_enc_fifo(empty_enc)
-	 
-//
-//    .filling(filling),
-//    .crc(crc),
-//    .start(start),
-//    //.stop(stop),
-//    .cb_size(cb_size),
-//    .cb_data(cb_data) 
+
+    .filling(filling),
+    .crc(crc),
+    .start(start),
+    //.stop(stop),
+    .cb_size(cb_size),
+    .cb_data(cb_data) 
 );
 
-assign data_enc = q_enc[2];
-assign size_enc = q_enc[1];
-assign start_enc = q_enc[0];
-
-assign data_itl = q_itl[4];
-assign size_itl = q_itl[3];
-assign start_itl = q_itl[2];
-assign crc_itl = q_itl[1];
-assign filling_itl = q_itl[0];
+//assign data_enc = q_enc[2];
+//assign size_enc = q_enc[1];
+//assign start_enc = q_enc[0];
+//
+//assign data_itl = q_itl[4];
+//assign size_itl = q_itl[3];
+//assign start_itl = q_itl[2];
+//assign crc_itl = q_itl[1];
+//assign filling_itl = q_itl[0];
 
 integer length = 7010;
-integer iterations = 7210, i, k;
+integer iterations = 7250, i, k;
 integer record_start= 0;
 reg check_out, switch = 1'b0;
 
@@ -74,24 +74,24 @@ initial clk=1'b0;
 always #5 clk=~clk;
 
 
-//Continously Readout the output buffer
-always@(posedge clk, reset) begin
-	if(reset==1'b1) begin
-		rreq_itl <= 1'b0;
-		rreq_enc <= 1'b0;
-	end
-	else begin
-		if(empty_itl==1'b0)
-			rreq_itl <= 1'b1;
-		else
-			rreq_itl <= 1'b0;
-		
-		if(empty_enc==1'b0)
-			rreq_enc <= 1'b1;
-		else
-			rreq_enc <= 1'b0;
-	end
-end 
+////Continously Readout the output buffer
+//always@(posedge clk, reset) begin
+//	if(reset==1'b1) begin
+//		rreq_itl <= 1'b0;
+//		rreq_enc <= 1'b0;
+//	end
+//	else begin
+//		if(empty_itl==1'b0)
+//			rreq_itl <= 1'b1;
+//		else
+//			rreq_itl <= 1'b0;
+//		
+//		if(empty_enc==1'b0)
+//			rreq_enc <= 1'b1;
+//		else
+//			rreq_enc <= 1'b0;
+//	end
+//end 
 
 
 //Power-on Reset
@@ -115,10 +115,10 @@ begin
 #50	wreq_size = 1'b1;
 		tb_size_in = length;
 #15	wreq_size = 1'b0;
-#15	wreq_tb = 1'b1;
-
+#25	wreq_tb = 1'b1;
+#5
 	i = 0;
-	k = 0;
+	k = -1;
 	while (i < iterations)
 	begin
 		//#10 
@@ -130,13 +130,15 @@ begin
 		
 		if (record_start == 1'b1 & k < 1056 & switch == 1'b0)
 			begin
-				check_out = output_vector1[k];
+				if(k>-1)
+					check_out = output_vector1[k];
 				k = k + 1;
 			end
 		else if (record_start == 1'b1 &  k < 6144 & switch == 1'b1)
 			begin
-				check_out = output_vector2[k];
-				k = k + 1;
+				if(k>-1)
+					check_out = output_vector2[k];
+				k = k + 1;			
 			end		
 		else
 			check_out = 0;
@@ -146,24 +148,24 @@ begin
 
 end
 
-//initial 
-//begin
-//
-//repeat(length * 20) 
-//	begin
-//	#1
-//		if (start == 1'b1)
-//			begin
-//				record_start = 1'b1;
-//			end
-//		
-//		if (record_start == 1'b1 & stop == 1'b1)
-//			begin
-//				record_start = 1'b0;
-//				switch = 1'b1;
-//				k = 0;
-//			end
-//	end
-//end
+initial 
+begin
+
+repeat(length * 20) 
+	begin
+	#1
+		if (start == 1'b1)
+			begin
+				record_start = 1'b1;
+			end
+		
+		if (record_start == 1'b1 & k==1056 & switch == 1'b0)
+			begin
+				record_start = 1'b0;
+				switch = 1'b1;
+				k = -1;
+			end
+	end
+end
 
 endmodule

@@ -18,13 +18,13 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 13:16:46  March 31, 2020
+# Date created = 22:18:21  March 31, 2020
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "18.1"
-DATE = "13:16:46  March 31, 2020"
+DATE = "22:18:21  March 31, 2020"
 
 # Revisions
 
-PROJECT_REVISION = "CodeBlockSegmentation"
+PROJECT_REVISION = "HardwareTB"

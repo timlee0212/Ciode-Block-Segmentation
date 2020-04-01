@@ -1,5 +1,5 @@
 Restore Archived Project report for HardwareTB
-Tue Mar 31 13:14:23 2020
+Tue Mar 31 22:18:21 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Tue Mar 31 13:14:23 2020 ;
+; Restore Archived Project Status ; Successful - Tue Mar 31 22:18:21 2020 ;
 ; Revision Name                   ; HardwareTB                            ;
-; Top-level Entity Name           ; cb_seg                                ;
+; Top-level Entity Name           ; mem_tb_cb_seg                         ;
 ; Family                          ; Cyclone V                             ;
 +---------------------------------+---------------------------------------+
 
@@ -46,15 +46,14 @@ refer to the applicable agreement for further details.
 +-----------------------------------+
 ; Restore Archived Project Messages ;
 +-----------------------------------+
-Warning (292006): Can't contact license server "27180@pratt-win01.egr.duke.edu" -- this server will be ignored.
-Info: Successfully restored 'E:/Courses/ECE559/CBSeg/tidyup.qar' into the 'E:\\Courses\\ECE559\\Code-Block-Segmentation/' directory
+Info: Successfully restored 'E:/Courses/ECE559/hardware_tb.qar' into the 'E:\\Courses\\ECE559\\Code-Block-Segmentation/' directory
 Info: Generated report 'HardwareTB.restore.rpt'
 Info (23030): Evaluation of Tcl script f:/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
-Info: Quartus Prime Shell was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4858 megabytes
-    Info: Processing ended: Tue Mar 31 13:14:23 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus Prime Shell was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Tue Mar 31 22:18:21 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +---------------------------+
@@ -72,6 +71,9 @@ Info: Quartus Prime Shell was successful. 0 errors, 12 warnings
 ; IP/counter_5bits.qip      ;
 ; IP/counter_5bits.v        ;
 ; IP/counter_5bits_inst.v   ;
+; IP/delay2.qip             ;
+; IP/delay2.v               ;
+; IP/delay2_inst.v          ;
 ; IP/enc_fifo.qip           ;
 ; IP/enc_fifo.v             ;
 ; IP/enc_fifo_inst.v        ;
@@ -88,21 +90,38 @@ Info: Quartus Prime Shell was successful. 0 errors, 12 warnings
 ; IP/mux_ip.qip             ;
 ; IP/mux_ip.v               ;
 ; IP/mux_ip_inst.v          ;
+; IP/ref_large.qip          ;
+; IP/ref_large.v            ;
+; IP/ref_large_inst.v       ;
+; IP/ref_small.qip          ;
+; IP/ref_small.v            ;
+; IP/ref_small_inst.v       ;
 ; IP/register_1bit.qip      ;
 ; IP/register_1bit.v        ;
 ; IP/register_1bit_inst.v   ;
 ; IP/register_2bits.qip     ;
 ; IP/register_2bits.v       ;
 ; IP/register_2bits_inst.v  ;
+; IP/register_8bits.qip     ;
+; IP/register_8bits.v       ;
+; IP/register_8bits_inst.v  ;
 ; IP/shiftreg.qip           ;
 ; IP/shiftreg.v             ;
 ; IP/shiftreg_inst.v        ;
+; IP/test_input.qip         ;
+; IP/test_input.v           ;
+; IP/test_input_inst.v      ;
+; mem/input_vector.mif      ;
+; mem/output_vector1.mif    ;
+; mem/output_vector2.mif    ;
 ; src/CRC_size.sv           ;
 ; src/crc24.v               ;
 ; src/data_path_control.v   ;
+; src/htb_cbseg.v           ;
 ; src/top_module.v          ;
 ; tb/tb_cb_seg.v            ;
 ; tb/tb_crc.v               ;
+; tb/tb_mem_htb.v           ;
 ; tb/tb_top_module.v        ;
 ; timing_constraints.sdc    ;
 +---------------------------+
