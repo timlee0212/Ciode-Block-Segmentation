@@ -18,6 +18,7 @@ io_4iomodule_c5_index: 19gpio_index: 58
 io_4iomodule_c5_index: 3gpio_index: 260
 io_4iomodule_c5_index: 29gpio_index: 62
 io_4iomodule_c5_index: 6gpio_index: 256
+io_4iomodule_c5_index: 17gpio_index: 67
 io_4iomodule_c5_index: 16gpio_index: 252
 io_4iomodule_c5_index: 22gpio_index: 70
 io_4iomodule_c5_index: 9gpio_index: 248
