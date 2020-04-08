@@ -8,69 +8,494 @@ z2
 !i10f 100
 cModel Technology
 Z0 dE:/Courses/ECE559/Code-Block-Segmentation/simulation/modelsim
-vcrc24
-Z1 !s110 1586359052
+vcal_size
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1586382364
 !i10b 1
-!s100 01R>M=7CHH0gg;h13<DI=2
-IhPbznm9IfggnNAza7bK]^1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 [_Zah`JB;jbTmd<905Z312
+I8Smg4j6ZAYD;92:Yf8`LY2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 CRC_size_sv_unit
+S1
 R0
-w1586358651
+Z5 w1586307895
+Z6 8E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv
+Z7 FE:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv
+L0 2
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1586382364.000000
+Z10 !s107 E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src|E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src
+Z14 tCvgOpt 0
+vcb_seg
+!s110 1586382359
+!i10b 1
+!s100 S1I7D3V?S?][lIhIKkf]f3
+IJ`ZIV]e;AOYI5m;d_1HLF3
+R3
+R0
+w1586369670
+8E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v
+FE:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z15 !s108 1586382359.000000
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src|E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v|
+!i113 1
+Z16 o-vlog01compat -work work
+Z17 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src
+R14
+vcounter_16bits
+Z18 !s110 1586382362
+!i10b 1
+!s100 oDkN7EzW]G]oblQl@AU:X2
+ICALW8=iCPchn1Qz0eC<W71
+R3
+R0
+w1586360534
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v
+Z19 L0 39
+R8
+r1
+!s85 0
+31
+Z20 !s108 1586382362.000000
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v|
+!i113 1
+R16
+Z21 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP
+R14
+vcrc24
+Z22 !s110 1586382360
+!i10b 1
+!s100 BFQAJ?i67B[Nnc1oWMdJ?1
+IbzF;k6nlK:[]BH:<j0Xm>0
+R3
+R0
+w1586360150
 8E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v
 FE:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v
 L0 1
-Z3 OV;L;10.5b;63
+R8
 r1
 !s85 0
 31
-Z4 !s108 1586359052.000000
+Z23 !s108 1586382360.000000
 !s107 E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src|E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v|
 !i113 1
-Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src
-Z6 tCvgOpt 0
-vshiftreg
+R16
+R17
+R14
+vcrc_shift_mux
+R2
+!i10b 1
+!s100 ^3B?TCobLm^]XY;kTQDd^3
+IR@lS3g>9[a_n8mZjgP;Dj2
+R3
+R0
+w1586360529
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v
+R19
+R8
+r1
+!s85 0
+31
+R9
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v|
+!i113 1
+R16
+R21
+R14
+vCRC_size
 R1
+R2
+!i10b 1
+!s100 IdPh>Bk`:6W1l=hcA;KRD2
+IB>@2:ViAYS2e76A0VePd71
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 63
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+n@c@r@c_size
+vdata_fsm
+R22
+!i10b 1
+!s100 aZM:4Vg8CiED>L]T2WeBh0
+IdRSo2m6?dXo[fEzbY>8L42
+R3
+R0
+w1586369474
+8E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v
+FE:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v
+L0 1
+R8
+r1
+!s85 0
+31
+R15
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src|E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v|
+!i113 1
+R16
+R17
+R14
+vfifo16
+Z24 !s110 1586382361
+!i10b 1
+!s100 <J0PPRJzHWnG2PJQ9=7fY3
+IDB3ff0f:`6nz8>nF2E:<V0
+R3
+R0
+w1585277151
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v
+R19
+R8
+r1
+!s85 0
+31
+Z25 !s108 1586382361.000000
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v|
+!i113 1
+R16
+R21
+R14
+vfifo20
+R24
+!i10b 1
+!s100 iF_E7ZQo=@EXa5BT5[Yak3
+I>69X`@2CQ[_:^]DLKz:MO2
+R3
+R0
+w1585277258
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v
+R19
+R8
+r1
+!s85 0
+31
+R25
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v|
+!i113 1
+R16
+R21
+R14
+vfifo_tb
+R18
+!i10b 1
+!s100 DKSe4FDUO3M1Ofco6:MJg2
+IC];11B64^;g5EK6Po@Gib0
+R3
+R0
+w1586360418
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v
+R19
+R8
+r1
+!s85 0
+31
+R20
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v|
+!i113 1
+R16
+R21
+R14
+vmem_tb_cb_seg
+R18
+!i10b 1
+!s100 oV>6J0_maV8BnNY13Y75l1
+Iej20EgT;5c7zBRAGJ6D<j1
+R3
+R0
+Z26 w1586381923
+Z27 8E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v
+Z28 FE:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v
+L0 1
+R8
+r1
+!s85 0
+31
+R20
+Z29 !s107 E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v|
+Z30 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src|E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v|
+!i113 1
+R16
+R17
+R14
+vmux_ip
+R24
+!i10b 1
+!s100 :=fbkm<GiezIc_k^AG5_E1
+ICNb@D5CJi>R9NF4BCS1M[2
+R3
+R0
+w1586359600
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v
+R19
+R8
+r1
+!s85 0
+31
+R25
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v|
+!i113 1
+R16
+R21
+R14
+vread_ctl
+R18
+!i10b 1
+!s100 bO5VA<R;;Q`Ni9FLLTNfL1
+I>Q>WA3R;@i0:@dW6KY<OQ1
+R3
+R0
+R26
+R27
+R28
+L0 162
+R8
+r1
+!s85 0
+31
+R20
+R29
+R30
+!i113 1
+R16
+R17
+R14
+vref_large
+Z31 !s110 1586382363
+!i10b 1
+!s100 1ACaG7AbC^IAhGIIW][`W2
+IFToQkh8DRfCndhYG4hkX21
+R3
+R0
+w1586379733
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v
+R19
+R8
+r1
+!s85 0
+31
+Z32 !s108 1586382363.000000
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v|
+!i113 1
+R16
+R21
+R14
+vref_small
+R31
+!i10b 1
+!s100 QBz_AO<aUPgV]kngSW=8I1
+Ihi4V3Nf6PRdZ_dd]mK0^<2
+R3
+R0
+w1586379683
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v
+R19
+R8
+r1
+!s85 0
+31
+R32
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v|
+!i113 1
+R16
+R21
+R14
+vregister_1bit
+R24
+!i10b 1
+!s100 2e1M8mcIKFcz[0IzBDY;e1
+I?KTO9k9<eX3]H7Td7Yai^1
+R3
+R0
+w1583361265
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v
+R19
+R8
+r1
+!s85 0
+31
+R25
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v|
+!i113 1
+R16
+R21
+R14
+vregister_2bits
+R22
+!i10b 1
+!s100 XMhz?L:7j?gYLgfa`Adn81
+IU8oagYd=h8J=Z50a@;:4<3
+R3
+R0
+w1583295614
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v
+R19
+R8
+r1
+!s85 0
+31
+R23
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v|
+!i113 1
+R16
+R21
+R14
+vregister_8bits
+R2
+!i10b 1
+!s100 03o;jK?C>YGF@KXD^hT3:0
+I>gE9=8lzY]WXh4Sn2iFQD3
+R3
+R0
+w1585695588
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v
+R19
+R8
+r1
+!s85 0
+31
+R32
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v|
+!i113 1
+R16
+R21
+R14
+vshiftreg
+R22
 !i10b 1
 !s100 eNjzAzBJ2F`L0NcM;JD361
 IBJg<lJgzZKiLh7V]3SV:f1
-R2
+R3
 R0
-w1585279655
+w1586360543
 8E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v
 FE:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v
-L0 39
-R3
+R19
+R8
 r1
 !s85 0
 31
-R4
+R23
 !s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v|
 !i113 1
-R5
-!s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP
-R6
-vtb_crc
-R1
+R16
+R21
+R14
+vtb_cb_seg
+!s110 1586382365
 !i10b 1
-!s100 bFVoZB2JChV9zb`nS:XI`2
-Ijoo4R2ZkcYCXn<8Uinfzz0
-R2
-R0
-w1586359046
-8E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v
-FE:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v
-L0 2
+!s100 h4zXBR<^_I9mCYWTR;BQ82
+I:RAGJc=L:VkD5M<JoRP]P2
 R3
+R0
+w1586369214
+8E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v
+FE:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v
+L0 2
+R8
 r1
 !s85 0
 31
-R4
-!s107 E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb|E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v|
+R9
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb|E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v|
 !i113 1
-R5
+R16
 !s92 -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb
-R6
+R14
+vtest_input
+R31
+!i10b 1
+!s100 8<=koOaQ[@?KR89iEK@bj3
+IEDB>@SPh<4kBUc8C;Z=]D2
+R3
+R0
+w1586381698
+8E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v
+FE:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v
+R19
+R8
+r1
+!s85 0
+31
+R32
+!s107 E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP|E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v|
+!i113 1
+R16
+R21
+R14
+vwrite_ctl
+R18
+!i10b 1
+!s100 KD1_183]>ea=7MQ>DM[BD0
+IhRJ3m1DI07=0^8AJX79[M1
+R3
+R0
+R26
+R27
+R28
+L0 68
+R8
+r1
+!s85 0
+31
+R20
+R29
+R30
+!i113 1
+R16
+R17
+R14

@@ -171,187 +171,187 @@ end
 //Moore&Mealy Output
 always@(*) begin
 				//Default Value, Avoid Latch
-	mux_fill 	<= 	1'b1;			//Output Data By Default
-	mux_crc 		<=		1'b0;			//Output Data By Default
-	init_crc		<=		1'b0;
-	ena_crc		<=		1'b0;
-	//nshift_crc 	<= 	1'b1;
-	read_data_fifo <=	1'b0;
-	read_size_fifo <= 1'b0;
-	block_size	<=		1'b0;
+	mux_fill 	= 	1'b1;			//Output Data By Default
+	mux_crc 		=		1'b0;			//Output Data By Default
+	init_crc		=		1'b0;
+	ena_crc		=		1'b0;
+	//nshift_crc 	= 	1'b1;
+	read_data_fifo =	1'b0;
+	read_size_fifo = 1'b0;
+	block_size	=		1'b0;
 	
-	start			<= 	1'b0;
-	filling		<= 	1'b0;
-	//stop			<=		1'b0;
-	crc			<=		1'b0;
+	start			= 	1'b0;
+	filling		= 	1'b0;
+	//stop			=		1'b0;
+	crc			=		1'b0;
 	
-	cnt_fl_in	<= 	16'h0000;
-	cnt_cb_in	<=		16'h0000;
-	cnt_fl_en	<=		1'b0;
-	cnt_fl_load	<=		1'b0;
-	cnt_cb_en	<=		1'b0;
-	cnt_cb_load <=		1'b0;
+	cnt_fl_in	= 	16'h0000;
+	cnt_cb_in	=		16'h0000;
+	cnt_fl_en	=		1'b0;
+	cnt_fl_load	=		1'b0;
+	cnt_cb_en	=		1'b0;
+	cnt_cb_load =		1'b0;
 	
-	req_crc_in	<=		1'b0;
-	req_crc_load<=		1'b0;
-	req_crc_en	<=		1'b0;
+	req_crc_in	=		1'b0;
+	req_crc_load=		1'b0;
+	req_crc_en	=		1'b0;
 	
-	wreq_itl_fifo <= 	1'b1;
-	wreq_enc_fifo <= 	1'b1;
+	wreq_itl_fifo = 	1'b1;
+	wreq_enc_fifo = 	1'b1;
 
-	cm_in			<=		2'b00;
-	cm_load		<=		1'b0;
-	cm_en			<=		1'b0;
-	cp_in			<=		2'b00;
-	cp_load		<=		1'b0;
-	cp_en			<=		1'b0;
+	cm_in			=		2'b00;
+	cm_load		=		1'b0;
+	cm_en			=		1'b0;
+	cp_in			=		2'b00;
+	cp_load		=		1'b0;
+	cp_en			=		1'b0;
 	
-	wc_in 		<= 	8'b0;
-	wc_load		<= 	1'b0;
+	wc_in 		= 	8'b0;
+	wc_load		= 	1'b0;
 	case(state_reg)
 		IDLE:	begin
-						init_crc <= 1'b1;
-						ena_crc	<= 1'b1;
-						req_crc_in	<=	1'b1;
-						req_crc_load<=	1'b1;
-						req_crc_en	<=	1'b1;
-						wreq_itl_fifo <= 	1'b0;
-						wreq_enc_fifo <= 	1'b0;
+						init_crc = 1'b1;
+						ena_crc	= 1'b1;
+						req_crc_in	=	1'b1;
+						req_crc_load=	1'b1;
+						req_crc_en	=	1'b1;
+						wreq_itl_fifo = 	1'b0;
+						wreq_enc_fifo = 	1'b0;
 				end
 						
 		READ_REQ:	begin
-						read_size_fifo <= 1'b1;
-						wreq_itl_fifo <= 	1'b0;
-						wreq_enc_fifo <= 	1'b0;
+						read_size_fifo = 1'b1;
+						wreq_itl_fifo = 	1'b0;
+						wreq_enc_fifo = 	1'b0;
 				end
 		
 		READ_SIZE:begin
-						cm_in		<= size[17:16];
-						cm_load 	<=	1'b1;
-						cm_en		<=	1'b1;
+						cm_in		= size[17:16];
+						cm_load 	=	1'b1;
+						cm_en		=	1'b1;
 		
-						cp_in 	<= size[19:18];
-						cp_load 	<=	1'b1;
-						cp_en		<=	1'b1;
+						cp_in 	= size[19:18];
+						cp_load 	=	1'b1;
+						cp_en		=	1'b1;
 						
-						cnt_fl_in<= size[15:0];
-						cnt_fl_load<=		1'b1;
+						cnt_fl_in= size[15:0];
+						cnt_fl_load=		1'b1;
 						
 						if ((size[19:18]==2'b00 && size[17:16]== 2'b01) ||
 							(size[19:18]==2'b01 && size[17:16]== 2'b00)) begin
-							req_crc_in <= 1'b0;
-							req_crc_en <= 1'b1;
-							req_crc_load <= 1'b1;
+							req_crc_in = 1'b0;
+							req_crc_en = 1'b1;
+							req_crc_load = 1'b1;
 						end
 						
-						wreq_itl_fifo <= 	1'b0;
-						wreq_enc_fifo <= 	1'b0;
+						wreq_itl_fifo = 	1'b0;
+						wreq_enc_fifo = 	1'b0;
 					end
 		
 		LOAD_SIZE:begin						
 						
 						//Decide According Number of Blocks
 						if (cp_q == 2'b10 && cm_q == 2'b00) begin
-							cp_in 	<= 2'b01;
-							cp_load 	<=	1'b1;
-							cp_en		<=	1'b1;
+							cp_in 	= 2'b01;
+							cp_load 	=	1'b1;
+							cp_en		=	1'b1;
 							
-							cnt_cb_in 	<= 16'h0300;	//6144 bits / 768 Bytes
-							cnt_cb_load	<=	1'b1;
+							cnt_cb_in 	= 16'h0300;	//6144 bits / 768 Bytes
+							cnt_cb_load	=	1'b1;
 						end
 						else if(cp_q == 2'b01 && cm_q == 2'b00) begin
-							cp_in 	<= 2'b00;
-							cp_load 	<=	1'b1;
-							cp_en		<=	1'b1;
+							cp_in 	= 2'b00;
+							cp_load 	=	1'b1;
+							cp_en		=	1'b1;
 							
-							cnt_cb_in <= 16'h0300;	//6144 bits / 768 Bytes
-							cnt_cb_load	<=	1'b1;
+							cnt_cb_in = 16'h0300;	//6144 bits / 768 Bytes
+							cnt_cb_load	=	1'b1;
 							
 						end
 						else if(cm_q == 2'b01) begin
-							cm_in 	<= 2'b00;
-							cm_load 	<=	1'b1;
-							cm_en		<=	1'b1;
+							cm_in 	= 2'b00;
+							cm_load 	=	1'b1;
+							cm_en		=	1'b1;
 							
-							cnt_cb_in <= 16'h0084;	//1056 bits / 132 Bytes
-							cnt_cb_load	<=	1'b1;
+							cnt_cb_in = 16'h0084;	//1056 bits / 132 Bytes
+							cnt_cb_load	=	1'b1;
 						end
-						start 	<= 1'b1;
+						start 	= 1'b1;
 
 					end
 					
 		SEND_SIZE: begin
 						if(cnt_fl_q == 16'h0000) begin 
-							read_data_fifo <=	1'b1;		//Pre-assert read request
+							read_data_fifo =	1'b1;		//Pre-assert read request
 						end
 						else	begin 
-							cnt_fl_en		<= 1'b1;
+							cnt_fl_en		= 1'b1;
 						end
 						
 						if(cnt_cb_q == 16'h0300)
-							block_size <= 1'b1;
+							block_size = 1'b1;
 						else
-							block_size <= 1'b0;
-						//ena_crc 	<= 1'b1;
-						cnt_cb_en<= 1'b1;
-						//nshift_crc <= 1'b1;
+							block_size = 1'b0;
+						//ena_crc 	= 1'b1;
+						cnt_cb_en= 1'b1;
+						//nshift_crc = 1'b1;
 					end
 						
 		FILLING:	begin
-						mux_fill <= 1'b0;
-						mux_crc	<=	1'b0;
-						filling 	<=	1'b1;
-						ena_crc 	<= 1'b1;
-						//nshift_crc <= 1'b1;
-						cnt_cb_en		<= 1'b1;
+						mux_fill = 1'b0;
+						mux_crc	=	1'b0;
+						filling 	=	1'b1;
+						ena_crc 	= 1'b1;
+						//nshift_crc = 1'b1;
+						cnt_cb_en		= 1'b1;
 						if(cnt_fl_q == 16'h0000) 
 						begin
-							cnt_fl_en<= 1'b0;		//Aoid Underflow
-							read_data_fifo <=	1'b1;		//Pre-assert read request
+							cnt_fl_en= 1'b0;		//Aoid Underflow
+							read_data_fifo =	1'b1;		//Pre-assert read request
 						end
-						else cnt_fl_en<= 1'b1;
+						else cnt_fl_en= 1'b1;
 					end
 		
 		READ_DATA:begin
-						mux_fill <= 1'b1;
-						mux_crc	<=	1'b0;
-						init_crc <= 1'b0;
-						ena_crc 	<= 1'b1;
-						//nshift_crc <= 1'b1;
-						cnt_cb_en	<=	1'b1;
+						mux_fill = 1'b1;
+						mux_crc	=	1'b0;
+						init_crc = 1'b0;
+						ena_crc 	= 1'b1;
+						//nshift_crc = 1'b1;
+						cnt_cb_en	=	1'b1;
 						if((req_crc_q==0 && cnt_cb_q==16'h0000) 
 							|| (req_crc_q==1 && cnt_cb_q == 16'h0003))
-							read_data_fifo <=	1'b0;	
+							read_data_fifo =	1'b0;	
 						else
-							read_data_fifo <=	1'b1;
+							read_data_fifo =	1'b1;
 							
-						//if(req_crc_q==1 && cnt_cb_q == 16'h0019) nshift_crc <= 1'b0;
+						//if(req_crc_q==1 && cnt_cb_q == 16'h0019) nshift_crc = 1'b0;
 					end
 		
 		OUT_CRC:	begin
-						mux_fill <= 1'b1;
-						mux_crc	<=	1'b1;
-						init_crc <= 1'b0;
-						ena_crc 	<= 1'b1;
-						//nshift_crc <= 1'b0;
-						cnt_cb_en	<=	1'b1;
-						crc		<= 1'b1;
+						mux_fill = 1'b1;
+						mux_crc	=	1'b1;
+						init_crc = 1'b0;
+						ena_crc 	= 1'b0;
+						//nshift_crc = 1'b0;
+						cnt_cb_en	=	1'b1;
+						crc		= 1'b1;
 					end
 		
 		NEXT_BLOCK:	begin
 				if(req_crc_q==1) begin 
-					mux_crc <= 1'b1;
-					crc <= 1'b1; //For the last bit of CRC
+					mux_crc = 1'b1;
+					crc = 1'b1; //For the last bit of CRC
 				end
-				//stop <= 1'b1;
-				init_crc <= 1'b1;
-				ena_crc 	<= 1'b1;
+				//stop = 1'b1;
+				init_crc = 1'b1;
+				ena_crc 	= 1'b1;
 				end
 		WAIT_NEXT: begin
 			//Self increase without latch
-			wc_in 	<= wc_q + 1'd1;
-			wc_load 	<=	1'b1;
-			ena_crc 	<= 1'b0;
+			wc_in 	= wc_q + 1'd1;
+			wc_load 	=	1'b1;
+			ena_crc 	= 1'b0;
 		end
 	endcase
 end

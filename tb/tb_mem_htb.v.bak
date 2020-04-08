@@ -2,8 +2,7 @@
 module tb_mem_htb();
 reg clk, reset, test_start;
 
-wire filling, crc, start, size;
-wire[7:0] data;
+wire filling, crc, start, size, data;
 wire test_good, test_end;
 
 mem_tb_cb_seg test_obj(

@@ -64,9 +64,9 @@ mux_ip	crc_mux (
 	);
 	
 crc_shift_mux	crc_shift_mux_inst (
-	.data0x (crc_out[7:0]),
+	.data0x (crc_out[23:16]),
 	.data1x (crc_out[15:8]),
-	.data2x (crc_out[23:16]),
+	.data2x (crc_out[7:0]),
 	.sel (crc_shift_mux_sel),
 	.result (crc_shift_mux_out)
 	);

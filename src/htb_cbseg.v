@@ -7,14 +7,16 @@ module mem_tb_cb_seg(
 	output wire test_end,
 	
 	//Debug Port for logic analyzer
-	output wire data,
+	output wire[7:0] data,
 	output wire size,
 	output wire start,
 	output wire crc,
 	output wire filling
 );
-wire in_data, in_size, in_start;
-wire data_in, wreq_data, wreq_size;
+wire[7:0] in_data;
+wire in_size, in_start;
+wire wreq_data, wreq_size;
+wire [7:0] data_in;
 wire[15:0] size_in;
 
 assign data = in_data;
@@ -70,7 +72,7 @@ module write_ctl(
 	
 	output reg wreq_size,
 	output reg wreq_data,
-	output wire data_in,
+	output wire[7:0] data_in,
 	output reg[15:0] size
 );
 
@@ -135,11 +137,11 @@ cnt_write_load	=		1'b0;
 
 	case(state_reg)
 		IDLE: begin
-			cnt_write_in  	= 16'd7009;
+			cnt_write_in  	= 16'd0877;
 			cnt_write_load =1'b1;		
 		end
 		WRITE_SIZE: begin 
-			size				= 16'd7010;
+			size				= 16'd0878;
 			wreq_size		= 1'b1;
 			cnt_write_en 	= 1'b1;
 		end
@@ -162,7 +164,7 @@ module read_ctl(
 	input wire clk,
 	input wire start,
 	input wire size,
-	input wire data,
+	input wire[7:0] data,
 	
 	output wire test_good,
 	output reg test_end
@@ -183,15 +185,13 @@ reg[7:0] state_reg, next_state;
 
 wire[15:0] cnt_read_q;
 
-wire ref_s, ref_l;
+wire[7:0] ref_s, ref_l;
 
 reg buf_load, buf_in;
 
 
 reg tg_load, tg_in;
 wire tg_q, buf_size;
-
-wire[1:0] d_data;
 
 assign test_good = tg_q;
 
@@ -222,23 +222,53 @@ register_1bit	reg_size_buf (
 	.q (buf_size)
 	);
 
-delay2	delay2_inst (
+wire[7:0] d1_data, d2_data;
+	
+register_8bits	delay_1st (
 	.aclr (reset),
 	.clock (clk),
-	.shiftin (data),
-	.q (d_data)
-);
+	.data (data),
+	.enable (1'b1),
+	.load (1'b1),
+	.q (d1_data)
+	);
+	
+register_8bits	delay_2nd (
+	.aclr (reset),
+	.clock (clk),
+	.data (d1_data),
+	.enable (1'b1),
+	.load (1'b1),
+	.q (d2_data)
+	);
+
+wire cmp_l, cmp_s;
+wire[7:0] xnor_l, xnor_s;
+
+assign xnor_l = d2_data ^~ ref_l;
+assign xnor_s = d2_data ^~ ref_s;
+
+
+and(cmp_l, xnor_l[0], xnor_l[1], xnor_l[2], xnor_l[3], xnor_l[4], xnor_l[5], xnor_l[6], xnor_l[7]);
+and(cmp_s, xnor_s[0], xnor_s[1], xnor_s[2], xnor_s[3], xnor_s[4], xnor_s[5], xnor_s[6], xnor_s[7]);
+//
+//delay2	delay2_inst (
+//	.aclr (reset),
+//	.clock (clk),
+//	.shiftin (data),
+//	.q (d_data)
+//);
 
 	
 ref_small	ref_small_block (
 	.aclr (reset),
-	.address (cnt_read_q[10:0]),
+	.address (cnt_read_q[7:0]),
 	.clock (clk),
 	.q (ref_s)
 	);
 ref_large	ref_large_block (
 	.aclr (reset),
-	.address (cnt_read_q[12:0]),
+	.address (cnt_read_q[9:0]),
 	.clock (clk),
 	.q (ref_l)
 	);
@@ -286,12 +316,12 @@ buf_in 			<= 	1'b0;
 		end
 		LOAD_SIZE: begin
 			if(size==1'b1) begin
-				cnt_read_in 	<= 16'd6143;
+				cnt_read_in 	<= 16'd0767;
 				cnt_read_load	<= 1'b1;
 				buf_in			<= 1'b1;
 			end
 			else begin
-				cnt_read_in 	<= 16'd1055;
+				cnt_read_in 	<= 16'd0131;
 				cnt_read_load	<= 1'b1;
 				buf_in			<= 1'b0;
 			end
@@ -305,27 +335,27 @@ buf_in 			<= 	1'b0;
 			cnt_read_en <= 1'b1;
 		end
 		READ_LARGE: begin
-			tg_in <= tg_q & (ref_l ^~ d_data[0]);
+			tg_in <= tg_q & cmp_l;
 			tg_load <= 1'b1;
 			cnt_read_en <= 1'b1;
 		end
 		READ_SMALL: begin
-			tg_in <= tg_q & (ref_s ^~ d_data[0]);
+			tg_in <= tg_q & cmp_s;
 			tg_load <= 1'b1;
 			cnt_read_en <= 1'b1;
 		end
 		WAIT_F1: begin
 			if(buf_size==1'b1)
-				tg_in <= tg_q & (ref_l ^~ d_data[0]);
+				tg_in <= tg_q & cmp_l;
 			else
-				tg_in <= tg_q & (ref_s ^~ d_data[0]);
+				tg_in <= tg_q & cmp_s;
 			tg_load <= 1'b1;
 		end
 		WAIT_F2: begin
 			if(buf_size==1'b1) 
-				tg_in <= tg_q & (ref_l ^~ d_data[0]);
+				tg_in <= tg_q & cmp_l;
 			else
-				tg_in <= tg_q & (ref_s ^~ d_data[0]);
+				tg_in <= tg_q & cmp_s;
 			tg_load <= 1'b1;
 			test_end <= 1'b1;
 		end

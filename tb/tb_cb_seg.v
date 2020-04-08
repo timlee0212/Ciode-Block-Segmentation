@@ -4,7 +4,8 @@ reg clk, reset, wreq_tb, wreq_size;
 reg [7:0] tb_in;
 reg[15:0] tb_size_in;
 
-//wire filling, crc, start, stop, cb_size, cb_data;
+wire filling, crc, start, stop, cb_size;
+wire[7:0] cb_data;
 //
 //wire empty_itl,empty_enc;
 //reg  rreq_itl, rreq_enc;
@@ -45,7 +46,7 @@ cb_seg test_obj(
 
 //integer length = 7024 = 8*878;
 integer length = 878;
-integer iterations = 910, i, k;
+integer iterations = 925, i, k;
 integer record_start= 0;
 reg [7:0] check_out;
 reg switch = 1'b0;
@@ -117,7 +118,7 @@ begin
 		//#10 
 		
 		if (i < length) 
-			tb_in = input_vector[(i+1)*8:i*8];
+			tb_in = input_vector[i*8 +: 8];
 		else
 			tb_in = 0;
 		
@@ -125,14 +126,14 @@ begin
 		if (record_start == 1'b1 & k < 132 & switch == 1'b0)
 			begin
 				if(k>-1)
-					check_out = output_vector1[(k+1)*8:k*8];
+					check_out = output_vector1[k*8 +: 8];
 				k = k + 1;
 			end
 		//else if (record_start == 1'b1 &  k < 6144 & switch == 1'b1)
 		else if (record_start == 1'b1 &  k < 768 & switch == 1'b1)
 			begin
 				if(k>-1)
-					check_out = output_vector2[(k+1)*8:k*8];
+					check_out = output_vector2[k*8 +: 8];
 				k = k + 1;			
 			end		
 		else

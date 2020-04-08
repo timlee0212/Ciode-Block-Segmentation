@@ -10,449 +10,237 @@
 # Copying F:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:45:59 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v 
+# -- Compiling module cb_seg
+# 
+# Top level modules:
+# 	cb_seg
+# End time: 17:45:59 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:45:59 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v 
+# -- Compiling module data_fsm
+# 
+# Top level modules:
+# 	data_fsm
+# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:58:52 on Apr 08,2020
+# Start time: 17:46:00 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
 # -- Compiling module crc24
 # 
 # Top level modules:
 # 	crc24
-# End time: 10:58:52 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:58:53 on Apr 08,2020
+# Start time: 17:46:00 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
 # -- Compiling module shiftreg
 # 
 # Top level modules:
 # 	shiftreg
-# End time: 10:58:53 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:58:53 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
+# Start time: 17:46:00 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v 
+# -- Compiling module register_2bits
 # 
 # Top level modules:
-# 	tb_crc
-# End time: 10:58:53 on Apr 08,2020, Elapsed time: 0:00:00
+# 	register_2bits
+# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:01 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v 
+# -- Compiling module register_1bit
+# 
+# Top level modules:
+# 	register_1bit
+# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:01 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v 
+# -- Compiling module mux_ip
+# 
+# Top level modules:
+# 	mux_ip
+# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:01 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v 
+# -- Compiling module fifo20
+# 
+# Top level modules:
+# 	fifo20
+# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:01 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v 
+# -- Compiling module fifo16
+# 
+# Top level modules:
+# 	fifo16
+# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:02 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v 
+# -- Compiling module fifo_tb
+# 
+# Top level modules:
+# 	fifo_tb
+# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:02 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v 
+# -- Compiling module counter_16bits
+# 
+# Top level modules:
+# 	counter_16bits
+# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:02 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v 
+# -- Compiling module mem_tb_cb_seg
+# -- Compiling module write_ctl
+# -- Compiling module read_ctl
+# 
+# Top level modules:
+# 	mem_tb_cb_seg
+# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:03 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v 
+# -- Compiling module test_input
+# 
+# Top level modules:
+# 	test_input
+# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:03 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v 
+# -- Compiling module ref_large
+# 
+# Top level modules:
+# 	ref_large
+# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:03 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v 
+# -- Compiling module ref_small
+# 
+# Top level modules:
+# 	ref_small
+# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:03 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v 
+# -- Compiling module register_8bits
+# 
+# Top level modules:
+# 	register_8bits
+# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:04 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v 
+# -- Compiling module crc_shift_mux
+# 
+# Top level modules:
+# 	crc_shift_mux
+# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:04 on Apr 08,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv 
+# -- Compiling module cal_size
+# -- Compiling module CRC_size
+# 
+# Top level modules:
+# 	CRC_size
+# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 10:58:53 on Apr 08,2020
-# Loading work.tb_crc
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:46:04 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v 
+# -- Compiling module tb_cb_seg
+# 
+# Top level modules:
+# 	tb_cb_seg
+# End time: 17:46:05 on Apr 08,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_cb_seg
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_cb_seg 
+# Start time: 17:46:05 on Apr 08,2020
+# Loading work.tb_cb_seg
+# Loading work.cb_seg
+# Loading work.mux_ip
+# Loading lpm_ver.lpm_mux
+# Loading work.crc_shift_mux
+# Loading work.fifo_tb
+# Loading altera_mf_ver.scfifo
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading work.crc24
 # Loading work.shiftreg
 # Loading lpm_ver.lpm_shiftreg
+# Loading work.data_fsm
+# Loading work.counter_16bits
+# Loading lpm_ver.lpm_counter
+# Loading work.register_1bit
+# Loading work.register_8bits
+# Loading work.register_2bits
+# Loading sv_std.std
+# Loading work.CRC_size
+# Loading work.fifo16
+# Loading work.fifo20
+# Loading work.cal_size
+# ** Warning: (vsim-3016) E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v(59): Port type is incompatible with connection (port 'load').
+#    Time: 0 ps  Iteration: 0  Instance: /tb_cb_seg/test_obj/crc_mod/shiftreg_inst/LPM_SHIFTREG_component File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlftwms20q".
+#           Attempting to use alternate WLF file "./wlft84vj6k".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwms20q
+#           Using alternate file: ./wlft84vj6k
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 5 us
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:04:46 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:04:46 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:04:47 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:04:47 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:04:47 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:04:47 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:04:49 on Apr 08,2020, Elapsed time: 0:05:56
-# Errors: 0, Warnings: 2
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:04:49 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlft26svsc".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft26svsc
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:05:29 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:05:29 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:05:29 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:05:29 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:05:29 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:05:29 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:05:32 on Apr 08,2020, Elapsed time: 0:00:43
-# Errors: 0, Warnings: 2
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:05:32 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlftt9fqk8".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt9fqk8
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:06:39 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:06:39 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:06:39 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:06:39 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:06:39 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:06:39 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:06:41 on Apr 08,2020, Elapsed time: 0:01:09
-# Errors: 0, Warnings: 2
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:06:41 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlftbvdzbh".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftbvdzbh
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-add wave -position 7  sim:/tb_crc/crc/state_next
-restart
-run
-run
-add wave -position 7  sim:/tb_crc/crc/state_next
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:12:31 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:12:31 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:12:31 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:12:31 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:12:31 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:12:31 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:12:34 on Apr 08,2020, Elapsed time: 0:05:53
-# Errors: 0, Warnings: 2
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:12:34 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlft60wm25".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft60wm25
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-add wave -position 7  sim:/tb_crc/crc/state_next
-restart
-run
-# WARNING: No extended dataflow license exists
-run
-add wave -position 7  sim:/tb_crc/crc/state_next
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:14:19 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:14:19 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:14:19 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:14:19 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:14:20 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:14:20 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:14:22 on Apr 08,2020, Elapsed time: 0:01:48
-# Errors: 0, Warnings: 3
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:14:22 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlfthr5k91".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthr5k91
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-add wave -position 7  sim:/tb_crc/crc/state_next
-restart
-run
-add wave -position 7  sim:/tb_crc/crc/state_next
-do HardwareTB_run_msim_rtl_verilog.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:17:32 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
-# -- Compiling module crc24
-# 
-# Top level modules:
-# 	crc24
-# End time: 11:17:32 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:17:32 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
-# -- Compiling module shiftreg
-# 
-# Top level modules:
-# 	shiftreg
-# End time: 11:17:32 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:17:32 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_crc.v 
-# -- Compiling module tb_crc
-# 
-# Top level modules:
-# 	tb_crc
-# End time: 11:17:32 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_crc
-# End time: 11:17:35 on Apr 08,2020, Elapsed time: 0:03:13
-# Errors: 0, Warnings: 2
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_crc 
-# Start time: 11:17:35 on Apr 08,2020
-# Loading work.tb_crc
-# Loading work.crc24
-# Loading work.shiftreg
-# Loading lpm_ver.lpm_shiftreg
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlftdc1z22".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdc1z22
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run 5 us
-# End time: 11:19:37 on Apr 08,2020, Elapsed time: 0:02:02
-# Errors: 0, Warnings: 2
+# run 10 us
