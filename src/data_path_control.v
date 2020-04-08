@@ -6,13 +6,15 @@ module data_fsm(
 	input wire empty_size_fifo,
 
 	input wire[19:0] size,
+	
+	output wire[1:0] crc_shift_sel,
 
 	output reg mux_fill,
 	output reg mux_crc,
 
 	output reg init_crc,
 	output reg ena_crc,
-	output reg nshift_crc,
+	//output reg nshift_crc,
 
 	output reg read_data_fifo,
 	output reg read_size_fifo,
@@ -61,6 +63,8 @@ reg[1:0] cm_in, cp_in;
 wire[1:0] cm_q, cp_q;
 
 reg[7:0] wait_cyc;
+
+assign crc_shift_sel = cnt_cb_q[1:0];
 
 //Instination IPs
 counter_16bits	cnt_fill (
@@ -142,7 +146,7 @@ always@(*) begin
 						else next_state <= FILLING;
 		
 		READ_DATA:	if(req_crc_q==0 && cnt_cb_q==16'h0001) next_state <= NEXT_BLOCK;
-						else if(req_crc_q==1 && cnt_cb_q == 16'h0018)	next_state <= OUT_CRC;
+						else if(req_crc_q==1 && cnt_cb_q == 16'h003)	next_state <= OUT_CRC;
 						else next_state <= READ_DATA;
 		
 		OUT_CRC:		if(cnt_cb_q == 16'h0001) next_state <= NEXT_BLOCK;
@@ -171,7 +175,7 @@ always@(*) begin
 	mux_crc 		<=		1'b0;			//Output Data By Default
 	init_crc		<=		1'b0;
 	ena_crc		<=		1'b0;
-	nshift_crc 	<= 	1'b1;
+	//nshift_crc 	<= 	1'b1;
 	read_data_fifo <=	1'b0;
 	read_size_fifo <= 1'b0;
 	block_size	<=		1'b0;
@@ -252,7 +256,7 @@ always@(*) begin
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
 							
-							cnt_cb_in 	<= 16'h1800;	//6144 bits
+							cnt_cb_in 	<= 16'h0300;	//6144 bits / 768 Bytes
 							cnt_cb_load	<=	1'b1;
 						end
 						else if(cp_q == 2'b01 && cm_q == 2'b00) begin
@@ -260,7 +264,7 @@ always@(*) begin
 							cp_load 	<=	1'b1;
 							cp_en		<=	1'b1;
 							
-							cnt_cb_in <= 16'h1800;	//6144 bits
+							cnt_cb_in <= 16'h0300;	//6144 bits / 768 Bytes
 							cnt_cb_load	<=	1'b1;
 							
 						end
@@ -269,7 +273,7 @@ always@(*) begin
 							cm_load 	<=	1'b1;
 							cm_en		<=	1'b1;
 							
-							cnt_cb_in <= 16'h0420;	//1056 bits
+							cnt_cb_in <= 16'h0084;	//1056 bits / 132 Bytes
 							cnt_cb_load	<=	1'b1;
 						end
 						start 	<= 1'b1;
@@ -284,13 +288,13 @@ always@(*) begin
 							cnt_fl_en		<= 1'b1;
 						end
 						
-						if(cnt_cb_q == 16'h1800)
+						if(cnt_cb_q == 16'h0300)
 							block_size <= 1'b1;
 						else
 							block_size <= 1'b0;
 						//ena_crc 	<= 1'b1;
 						cnt_cb_en<= 1'b1;
-						nshift_crc <= 1'b1;
+						//nshift_crc <= 1'b1;
 					end
 						
 		FILLING:	begin
@@ -298,7 +302,7 @@ always@(*) begin
 						mux_crc	<=	1'b0;
 						filling 	<=	1'b1;
 						ena_crc 	<= 1'b1;
-						nshift_crc <= 1'b1;
+						//nshift_crc <= 1'b1;
 						cnt_cb_en		<= 1'b1;
 						if(cnt_fl_q == 16'h0000) 
 						begin
@@ -313,10 +317,10 @@ always@(*) begin
 						mux_crc	<=	1'b0;
 						init_crc <= 1'b0;
 						ena_crc 	<= 1'b1;
-						nshift_crc <= 1'b1;
+						//nshift_crc <= 1'b1;
 						cnt_cb_en	<=	1'b1;
 						if((req_crc_q==0 && cnt_cb_q==16'h0000) 
-							|| (req_crc_q==1 && cnt_cb_q == 16'h0018))
+							|| (req_crc_q==1 && cnt_cb_q == 16'h0003))
 							read_data_fifo <=	1'b0;	
 						else
 							read_data_fifo <=	1'b1;
@@ -329,7 +333,7 @@ always@(*) begin
 						mux_crc	<=	1'b1;
 						init_crc <= 1'b0;
 						ena_crc 	<= 1'b1;
-						nshift_crc <= 1'b0;
+						//nshift_crc <= 1'b0;
 						cnt_cb_en	<=	1'b1;
 						crc		<= 1'b1;
 					end

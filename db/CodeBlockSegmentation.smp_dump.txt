@@ -1,25 +1,5 @@
 
-State Machine - |mem_tb_cb_seg|read_ctl:reader|state_reg
-Name state_reg.WAIT_F2 state_reg.WAIT_F1 state_reg.READ_SMALL state_reg.READ_LARGE state_reg.WAIT_REG2 state_reg.WAIT_REG1 state_reg.LOAD_SIZE state_reg.IDLE 
-state_reg.IDLE 0 0 0 0 0 0 0 0 
-state_reg.LOAD_SIZE 0 0 0 0 0 0 1 1 
-state_reg.WAIT_REG1 0 0 0 0 0 1 0 1 
-state_reg.WAIT_REG2 0 0 0 0 1 0 0 1 
-state_reg.READ_LARGE 0 0 0 1 0 0 0 1 
-state_reg.READ_SMALL 0 0 1 0 0 0 0 1 
-state_reg.WAIT_F1 0 1 0 0 0 0 0 1 
-state_reg.WAIT_F2 1 0 0 0 0 0 0 1 
-
-State Machine - |mem_tb_cb_seg|write_ctl:writer|state_reg
-Name state_reg.WRITE_FIN2 state_reg.WRITE_FIN1 state_reg.WRITE_DATA state_reg.WAIT_MEM state_reg.WRITE_SIZE state_reg.IDLE 
-state_reg.IDLE 0 0 0 0 0 0 
-state_reg.WRITE_SIZE 0 0 0 0 1 1 
-state_reg.WAIT_MEM 0 0 0 1 0 1 
-state_reg.WRITE_DATA 0 0 1 0 0 1 
-state_reg.WRITE_FIN1 0 1 0 0 0 1 
-state_reg.WRITE_FIN2 1 0 0 0 0 1 
-
-State Machine - |mem_tb_cb_seg|cb_seg:test_obj|data_fsm:datapath_control_unit|state_reg
+State Machine - |cb_seg|data_fsm:datapath_control_unit|state_reg
 Name state_reg.WAIT_NEXT state_reg.NEXT_BLOCK state_reg.OUT_CRC state_reg.READ_DATA state_reg.FILLING state_reg.SEND_SIZE state_reg.LOAD_SIZE state_reg.READ_SIZE state_reg.READ_REQ state_reg.IDLE 
 state_reg.IDLE 0 0 0 0 0 0 0 0 0 0 
 state_reg.READ_REQ 0 0 0 0 0 0 0 0 1 1 

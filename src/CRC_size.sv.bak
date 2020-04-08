@@ -8,19 +8,12 @@ module cal_size ( input logic [15:0] B,
 	logic [2:0] branch;
 	
 	// 5'd12240 = 4'h2FD0    // 4'd7152  = 4'h1BF0
-	// 4'd1530  = 4'h05FA    // 4'd0894  = 4'h037E for Byte
-    //
 	// 4'd6144  = 4'h1800    // 4'd1056  = 4'h0420
-	// 4'd0768  = 4'h0300    // 4'd0132  = 4'h0084 for Byte
 	
-	//localparam max  = 16'h2FD0;
-	//localparam high = 16'h1BF0;
-	//localparam mid  = 16'h1800;
-	//localparam low  = 16'h0420;
-	localparam max  = 16'h05FA;
-	localparam high = 16'h037E;
-	localparam mid  = 16'h0300;
-	localparam low  = 16'h0084;
+	localparam max  = 16'h2FD0;
+	localparam high = 16'h1BF0;
+	localparam mid  = 16'h1800;
+	localparam low  = 16'h0420;
 	
 	assign max_exceed_error = (B > max) ? 1'b1: 1'b0;
 	assign branch[2] = (B > high) ? 1'b1: 1'b0;  // two large blocks
