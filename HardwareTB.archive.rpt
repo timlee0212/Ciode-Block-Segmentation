@@ -1,5 +1,5 @@
 Archive Project report for HardwareTB
-Tue Mar 31 22:03:52 2020
+Wed Apr 08 18:07:50 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Tue Mar 31 22:03:52 2020 ;
+; Archive Project Status ; Successful - Wed Apr 08 18:07:50 2020 ;
 ; Revision Name          ; HardwareTB                            ;
 ; Top-level Entity Name  ; mem_tb_cb_seg                         ;
 ; Family                 ; Cyclone V                             ;
@@ -45,89 +45,95 @@ refer to the applicable agreement for further details.
 +--------------------------+
 ; Archive Project Messages ;
 +--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory E:/Courses/ECE559/CBSeg/
+Info (13213): Using common directory E:/Courses/ECE559/Code-Block-Segmentation/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'E:/Courses/ECE559/hardware_tb.qar'
+Info: Generated archive 'C:/Users/Timlee/Desktop/CB_HardwareTB.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'HardwareTB.archive.rpt'
 Info (23030): Evaluation of Tcl script f:/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
-Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Tue Mar 31 22:03:52 2020
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus Prime Shell was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4892 megabytes
+    Info: Processing ended: Wed Apr 08 18:07:50 2020
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:03
 
 
-+---------------------------+
-; Files Archived            ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; CodeBlockSegmentation.qpf ;
-; CodeBlockSegmentation.qsf ;
-; HardwareTB.qsf            ;
-; IP/counter_5bits.qip      ;
-; IP/counter_5bits.v        ;
-; IP/counter_5bits_inst.v   ;
-; IP/counter_16bits.qip     ;
-; IP/counter_16bits.v       ;
-; IP/counter_16bits_inst.v  ;
-; IP/delay2.qip             ;
-; IP/delay2.v               ;
-; IP/delay2_inst.v          ;
-; IP/enc_fifo.qip           ;
-; IP/enc_fifo.v             ;
-; IP/enc_fifo_inst.v        ;
-; IP/fifo16.qip             ;
-; IP/fifo16.v               ;
-; IP/fifo20.qip             ;
-; IP/fifo20.v               ;
-; IP/fifo_tb.qip            ;
-; IP/fifo_tb.v              ;
-; IP/fifo_tb_inst.v         ;
-; IP/itl_fifo.qip           ;
-; IP/itl_fifo.v             ;
-; IP/itl_fifo_inst.v        ;
-; IP/mux_ip.qip             ;
-; IP/mux_ip.v               ;
-; IP/mux_ip_inst.v          ;
-; IP/ref_large.qip          ;
-; IP/ref_large.v            ;
-; IP/ref_large_inst.v       ;
-; IP/ref_small.qip          ;
-; IP/ref_small.v            ;
-; IP/ref_small_inst.v       ;
-; IP/register_1bit.qip      ;
-; IP/register_1bit.v        ;
-; IP/register_1bit_inst.v   ;
-; IP/register_2bits.qip     ;
-; IP/register_2bits.v       ;
-; IP/register_2bits_inst.v  ;
-; IP/register_8bits.qip     ;
-; IP/register_8bits.v       ;
-; IP/register_8bits_inst.v  ;
-; IP/shiftreg.qip           ;
-; IP/shiftreg.v             ;
-; IP/shiftreg_inst.v        ;
-; IP/test_input.qip         ;
-; IP/test_input.v           ;
-; IP/test_input_inst.v      ;
-; mem/input_vector.mif      ;
-; mem/output_vector1.mif    ;
-; mem/output_vector2.mif    ;
-; src/crc24.v               ;
-; src/CRC_size.sv           ;
-; src/data_path_control.v   ;
-; src/htb_cbseg.v           ;
-; src/top_module.v          ;
-; tb/tb_cb_seg.v            ;
-; tb/tb_crc.v               ;
-; tb/tb_mem_htb.v           ;
-; tb/tb_top_module.v        ;
-; timing_constraints.sdc    ;
-+---------------------------+
++--------------------------------------------------+
+; Files Archived                                   ;
++--------------------------------------------------+
+; File Name                                        ;
++--------------------------------------------------+
+; CodeBlockSegmentation.qpf                        ;
+; f:/quartus/quartus/bin64/assignment_defaults.qdf ;
+; HardwareTB.qsf                                   ;
+; IP/counter_5bits.qip                             ;
+; IP/counter_5bits.v                               ;
+; IP/counter_5bits_inst.v                          ;
+; IP/counter_16bits.qip                            ;
+; IP/counter_16bits.v                              ;
+; IP/counter_16bits_bb.v                           ;
+; IP/counter_16bits_inst.v                         ;
+; IP/crc_shift_mux.qip                             ;
+; IP/crc_shift_mux.v                               ;
+; IP/crc_shift_mux_inst.v                          ;
+; IP/enc_fifo.qip                                  ;
+; IP/enc_fifo.v                                    ;
+; IP/enc_fifo_inst.v                               ;
+; IP/fifo16.qip                                    ;
+; IP/fifo16.v                                      ;
+; IP/fifo20.qip                                    ;
+; IP/fifo20.v                                      ;
+; IP/fifo_tb.qip                                   ;
+; IP/fifo_tb.v                                     ;
+; IP/fifo_tb_inst.v                                ;
+; IP/itl_fifo.qip                                  ;
+; IP/itl_fifo.v                                    ;
+; IP/itl_fifo_bb.v                                 ;
+; IP/itl_fifo_inst.v                               ;
+; IP/mux_ip.qip                                    ;
+; IP/mux_ip.v                                      ;
+; IP/mux_ip_inst.v                                 ;
+; IP/ref_large.qip                                 ;
+; IP/ref_large.v                                   ;
+; IP/ref_large_inst.v                              ;
+; IP/ref_small.qip                                 ;
+; IP/ref_small.v                                   ;
+; IP/ref_small_inst.v                              ;
+; IP/register_1bit.qip                             ;
+; IP/register_1bit.v                               ;
+; IP/register_1bit_inst.v                          ;
+; IP/register_2bits.qip                            ;
+; IP/register_2bits.v                              ;
+; IP/register_2bits_inst.v                         ;
+; IP/register_8bits.qip                            ;
+; IP/register_8bits.v                              ;
+; IP/register_8bits_inst.v                         ;
+; IP/shiftreg.qip                                  ;
+; IP/shiftreg.v                                    ;
+; IP/shiftreg_inst.v                               ;
+; IP/test_input.qip                                ;
+; IP/test_input.v                                  ;
+; IP/test_input_inst.v                             ;
+; mem/input_vector.mif                             ;
+; mem/output_vector1.mif                           ;
+; mem/output_vector2.mif                           ;
+; src/crc24.v                                      ;
+; src/CRC_size.sv                                  ;
+; src/data_path_control.v                          ;
+; src/htb_cbseg.v                                  ;
+; src/top_module.v                                 ;
+; tb/tb_cb_seg.v                                   ;
+; tb/tb_crc.v                                      ;
+; tb/tb_mem_htb.v                                  ;
+; tb/tb_top_module.v                               ;
+; timing_constraints.sdc                           ;
++--------------------------------------------------+
 
 

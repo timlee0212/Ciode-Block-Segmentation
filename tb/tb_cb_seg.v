@@ -2,7 +2,7 @@
 module tb_cb_seg();
 reg clk, reset, wreq_tb, wreq_size;
 reg [7:0] tb_in;
-reg[15:0] tb_size_in;
+reg[11:0] tb_size_in;
 
 wire filling, crc, start, stop, cb_size;
 wire[7:0] cb_data;

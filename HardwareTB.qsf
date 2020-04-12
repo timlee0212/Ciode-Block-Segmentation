@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY mem_tb_cb_seg
+set_global_assignment -name TOP_LEVEL_ENTITY cb_seg
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:11:37  MARCH 30, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -92,12 +92,8 @@ set_global_assignment -name QIP_FILE IP/register_2bits.qip
 set_global_assignment -name QIP_FILE IP/register_1bit.qip
 set_global_assignment -name QIP_FILE IP/mux_ip.qip
 set_global_assignment -name QIP_FILE IP/itl_fifo.qip
-set_global_assignment -name QIP_FILE IP/fifo20.qip
-set_global_assignment -name QIP_FILE IP/fifo16.qip
 set_global_assignment -name QIP_FILE IP/fifo_tb.qip
 set_global_assignment -name QIP_FILE IP/enc_fifo.qip
-set_global_assignment -name QIP_FILE IP/counter_16bits.qip
-set_global_assignment -name QIP_FILE IP/counter_5bits.qip
 set_global_assignment -name VERILOG_FILE src/htb_cbseg.v
 set_global_assignment -name QIP_FILE IP/test_input.qip
 set_global_assignment -name QIP_FILE IP/ref_large.qip
@@ -108,9 +104,16 @@ set_global_assignment -name QIP_FILE IP/crc_shift_mux.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -from clk -to *
+set_global_assignment -name QIP_FILE IP/fifo12.qip
+set_global_assignment -name QIP_FILE IP/fifo14.qip
+set_global_assignment -name QIP_FILE IP/counter_10bits.qip
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_top_module.v -section_id tb_top_module
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_cb_seg.v -section_id tb_cb_seg
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_crc.v -section_id tb_crc
 set_global_assignment -name EDA_TEST_BENCH_FILE tb/tb_mem_htb.v -section_id tb_mem_htb
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name MUX_RESTRUCTURE OFF
+set_global_assignment -name STATE_MACHINE_PROCESSING "ONE-HOT"
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
+set_global_assignment -name AUTO_DELAY_CHAINS_FOR_HIGH_FANOUT_INPUT_PINS ON
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

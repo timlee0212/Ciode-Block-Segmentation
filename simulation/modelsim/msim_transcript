@@ -12,202 +12,166 @@
 # 
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:45:59 on Apr 08,2020
+# Start time: 18:33:22 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/top_module.v 
 # -- Compiling module cb_seg
 # 
 # Top level modules:
 # 	cb_seg
-# End time: 17:45:59 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:22 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:45:59 on Apr 08,2020
+# Start time: 18:33:22 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v 
 # -- Compiling module data_fsm
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(142): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(145): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(148): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(152): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(188): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: E:/Courses/ECE559/Code-Block-Segmentation/src/data_path_control.v(189): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	data_fsm
-# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 18:33:22 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 6
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:00 on Apr 08,2020
+# Start time: 18:33:22 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/crc24.v 
 # -- Compiling module crc24
 # 
 # Top level modules:
 # 	crc24
-# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:22 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:00 on Apr 08,2020
+# Start time: 18:33:22 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v 
 # -- Compiling module shiftreg
 # 
 # Top level modules:
 # 	shiftreg
-# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:22 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:00 on Apr 08,2020
+# Start time: 18:33:23 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v 
 # -- Compiling module register_2bits
 # 
 # Top level modules:
 # 	register_2bits
-# End time: 17:46:00 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:23 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:01 on Apr 08,2020
+# Start time: 18:33:23 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v 
 # -- Compiling module register_1bit
 # 
 # Top level modules:
 # 	register_1bit
-# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:23 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:01 on Apr 08,2020
+# Start time: 18:33:23 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v 
 # -- Compiling module mux_ip
 # 
 # Top level modules:
 # 	mux_ip
-# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:01 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v 
-# -- Compiling module fifo20
-# 
-# Top level modules:
-# 	fifo20
-# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:01 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v 
-# -- Compiling module fifo16
-# 
-# Top level modules:
-# 	fifo16
-# End time: 17:46:01 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:23 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:02 on Apr 08,2020
+# Start time: 18:33:23 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v 
 # -- Compiling module fifo_tb
 # 
 # Top level modules:
 # 	fifo_tb
-# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:02 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v 
-# -- Compiling module counter_16bits
-# 
-# Top level modules:
-# 	counter_16bits
-# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:02 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v 
-# -- Compiling module mem_tb_cb_seg
-# -- Compiling module write_ctl
-# -- Compiling module read_ctl
-# 
-# Top level modules:
-# 	mem_tb_cb_seg
-# End time: 17:46:02 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:03 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v 
-# -- Compiling module test_input
-# 
-# Top level modules:
-# 	test_input
-# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:03 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v 
-# -- Compiling module ref_large
-# 
-# Top level modules:
-# 	ref_large
-# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:03 on Apr 08,2020
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v 
-# -- Compiling module ref_small
-# 
-# Top level modules:
-# 	ref_small
-# End time: 17:46:03 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:23 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:03 on Apr 08,2020
+# Start time: 18:33:24 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v 
 # -- Compiling module register_8bits
 # 
 # Top level modules:
 # 	register_8bits
-# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:01
+# End time: 18:33:24 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:04 on Apr 08,2020
+# Start time: 18:33:24 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v 
 # -- Compiling module crc_shift_mux
 # 
 # Top level modules:
 # 	crc_shift_mux
-# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:24 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo12.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:33:24 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo12.v 
+# -- Compiling module fifo12
+# 
+# Top level modules:
+# 	fifo12
+# End time: 18:33:24 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo14.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:33:24 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo14.v 
+# -- Compiling module fifo14
+# 
+# Top level modules:
+# 	fifo14
+# End time: 18:33:24 on Apr 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_10bits.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:33:25 on Apr 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP" E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_10bits.v 
+# -- Compiling module counter_10bits
+# 
+# Top level modules:
+# 	counter_10bits
+# End time: 18:33:25 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:04 on Apr 08,2020
+# Start time: 18:33:25 on Apr 08,2020
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/src" E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv 
 # -- Compiling module cal_size
 # -- Compiling module CRC_size
 # 
 # Top level modules:
 # 	CRC_size
-# End time: 17:46:04 on Apr 08,2020, Elapsed time: 0:00:00
+# End time: 18:33:25 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:46:04 on Apr 08,2020
+# Start time: 18:33:25 on Apr 08,2020
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb" E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v 
 # -- Compiling module tb_cb_seg
 # 
 # Top level modules:
 # 	tb_cb_seg
-# End time: 17:46:05 on Apr 08,2020, Elapsed time: 0:00:01
+# End time: 18:33:25 on Apr 08,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_cb_seg
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_cb_seg 
-# Start time: 17:46:05 on Apr 08,2020
+# Start time: 18:33:25 on Apr 08,2020
 # Loading work.tb_cb_seg
 # Loading work.cb_seg
 # Loading work.mux_ip
@@ -220,27 +184,31 @@
 # Loading work.shiftreg
 # Loading lpm_ver.lpm_shiftreg
 # Loading work.data_fsm
-# Loading work.counter_16bits
+# Loading work.counter_10bits
 # Loading lpm_ver.lpm_counter
 # Loading work.register_1bit
 # Loading work.register_8bits
 # Loading work.register_2bits
 # Loading sv_std.std
 # Loading work.CRC_size
-# Loading work.fifo16
-# Loading work.fifo20
+# Loading work.fifo12
+# Loading work.fifo14
 # Loading work.cal_size
 # ** Warning: (vsim-3016) E:/Courses/ECE559/Code-Block-Segmentation/IP/shiftreg.v(59): Port type is incompatible with connection (port 'load').
 #    Time: 0 ps  Iteration: 0  Instance: /tb_cb_seg/test_obj/crc_mod/shiftreg_inst/LPM_SHIFTREG_component File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/220model.v
+# ** Warning: (vsim-3015) E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv(87): [PCDPC] - Port size (12) does not match connection size (10) for port 'filler'. The port definition is at: E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_cb_seg/test_obj/cb_size_computation/cal_size_inst File: E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Timlee  Hostname: DESKTOP-4S4BJ17  ProcessID: 11948
-#           Attempting to use alternate WLF file "./wlft84vj6k".
+#           Attempting to use alternate WLF file "./wlftnfsf8s".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft84vj6k
+#           Using alternate file: ./wlftnfsf8s
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 10 us
+# End time: 18:35:52 on Apr 08,2020, Elapsed time: 0:02:27
+# Errors: 0, Warnings: 4

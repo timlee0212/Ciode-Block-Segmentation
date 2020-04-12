@@ -3,7 +3,7 @@ module cb_seg(
     input wire reset,
     input wire[7:0] tb_in,
     input wire wreq_data,        //Write Request of the Input TB buffer
-    input wire[15:0] tb_size_in,  
+    input wire[11:0] tb_size_in,  
     input wire wreq_size,
     //TODO: A signal from Transfer Layer to initilize the computation?
 
@@ -38,7 +38,7 @@ wire wreq_itl_fifo, wreq_enc_fifo;
 
 wire[1:0] crc_shift_mux_sel;
 
-wire[19:0] size_fifo_data;
+wire[13:0] size_fifo_data;
 
 wire[7:0] padding_mux_out;
 

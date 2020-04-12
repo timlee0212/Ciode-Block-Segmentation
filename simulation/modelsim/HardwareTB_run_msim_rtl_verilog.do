@@ -12,16 +12,12 @@ vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_2bits.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_1bit.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/mux_ip.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo20.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo16.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo_tb.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_16bits.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/htb_cbseg.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/test_input.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_large.v}
-vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/ref_small.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/register_8bits.v}
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/crc_shift_mux.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo12.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/fifo14.v}
+vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/IP {E:/Courses/ECE559/Code-Block-Segmentation/IP/counter_10bits.v}
 vlog -sv -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/src {E:/Courses/ECE559/Code-Block-Segmentation/src/CRC_size.sv}
 
 vlog -vlog01compat -work work +incdir+E:/Courses/ECE559/Code-Block-Segmentation/tb {E:/Courses/ECE559/Code-Block-Segmentation/tb/tb_cb_seg.v}
