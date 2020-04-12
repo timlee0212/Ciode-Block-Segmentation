@@ -4,17 +4,27 @@ reg clk, reset, wreq_tb, wreq_size;
 reg [7:0] tb_in;
 reg[11:0] tb_size_in;
 
-wire filling, crc, start, stop, cb_size;
-wire[7:0] cb_data;
-//
-//wire empty_itl,empty_enc;
-//reg  rreq_itl, rreq_enc;
-//
-//wire[2:0] q_enc;
-//wire data_enc, size_enc, start_enc;
-//
-//wire[4:0] q_itl;
-//wire data_itl, size_itl, start_itl, crc_itl, filling_itl;
+//wire filling, crc, start, stop, cb_size;
+//wire[7:0] cb_data;
+
+wire empty_itl,empty_enc;
+reg  rreq_itl, rreq_enc;
+
+wire[9:0] q_enc;
+wire size_enc, start_enc;
+wire[7:0] data_enc;
+
+wire[9:0] q_itl;
+wire size_itl, start_itl;
+wire[7:0] data_itl;
+
+assign data_itl = q_itl[9:2];
+assign size_itl = q_itl[1];
+assign start_itl = q_itl[0];
+
+assign data_enc = q_enc[9:2];
+assign size_enc = q_enc[1];
+assign start_enc = q_enc[0];
 
 
 cb_seg test_obj(
@@ -25,22 +35,22 @@ cb_seg test_obj(
     .tb_size_in(tb_size_in),  
     .wreq_size(wreq_size),
 	 
-//	 .rreq_itl_fifo(rreq_itl),
-//	 .q_itl_fifo(q_itl), //{data, size, start}
-//	 .empty_itl_fifo(empty_itl),
-//	 
-//	 //Encoder FIFO Ports
-//	 .rreq_enc_fifo(rreq_enc),
-//	 .q_enc_fifo(q_enc),  //{data, size, start, crc, filling}
-//	 .empty_enc_fifo(empty_enc)
+	 .rreq_itl_fifo(rreq_itl),
+	 .q_itl_fifo(q_itl), //{data, size, start}
+	 .empty_itl_fifo(empty_itl),
+	 
+	 //Encoder FIFO Ports
+	 .rreq_enc_fifo(rreq_enc),
+	 .q_enc_fifo(q_enc),  //{data, size, start, crc, filling}
+	 .empty_enc_fifo(empty_enc)
 	 
 
-    .filling(filling),
-    .crc(crc),
-    .start(start),
-    //.stop(stop),
-    .cb_size(cb_size),
-    .cb_data(cb_data) 
+//    .filling(filling),
+//    .crc(crc),
+//    .start(start),
+//    //.stop(stop),
+//    .cb_size(cb_size),
+//    .cb_data(cb_data) 
 );
 
 
@@ -68,24 +78,24 @@ initial clk=1'b0;
 always #5 clk=~clk;
 
 
-////Continously Readout the output buffer
-//always@(posedge clk, reset) begin
-//	if(reset==1'b1) begin
-//		rreq_itl <= 1'b0;
-//		rreq_enc <= 1'b0;
-//	end
-//	else begin
-//		if(empty_itl==1'b0)
-//			rreq_itl <= 1'b1;
-//		else
-//			rreq_itl <= 1'b0;
-//		
-//		if(empty_enc==1'b0)
-//			rreq_enc <= 1'b1;
-//		else
-//			rreq_enc <= 1'b0;
-//	end
-//end 
+//Continously Readout the output buffer
+always@(posedge clk, reset) begin
+	if(reset==1'b1) begin
+		rreq_itl <= 1'b0;
+		rreq_enc <= 1'b0;
+	end
+	else begin
+		if(empty_itl==1'b0)
+			rreq_itl <= 1'b1;
+		else
+			rreq_itl <= 1'b0;
+		
+		if(empty_enc==1'b0)
+			rreq_enc <= 1'b1;
+		else
+			rreq_enc <= 1'b0;
+	end
+end 
 
 
 //Power-on Reset
@@ -150,7 +160,7 @@ begin
 repeat(length * 20) 
 	begin
 	#1
-		if (start == 1'b1)
+		if (start_itl == 1'b1)
 			begin
 				record_start = 1'b1;
 			end

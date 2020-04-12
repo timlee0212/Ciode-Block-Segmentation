@@ -4,51 +4,91 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "filling",
+					"name" : "q_itl_fifo[0]",
 					"strict" : false
 				},
 				{
-					"name" : "crc",
+					"name" : "q_itl_fifo[1]",
 					"strict" : false
 				},
 				{
-					"name" : "start",
+					"name" : "q_itl_fifo[2]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_size",
+					"name" : "q_itl_fifo[3]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[0]",
+					"name" : "q_itl_fifo[4]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[1]",
+					"name" : "q_itl_fifo[5]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[2]",
+					"name" : "q_itl_fifo[6]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[3]",
+					"name" : "q_itl_fifo[7]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[4]",
+					"name" : "q_itl_fifo[8]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[5]",
+					"name" : "q_itl_fifo[9]",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[6]",
+					"name" : "empty_itl_fifo",
 					"strict" : false
 				},
 				{
-					"name" : "cb_data[7]",
+					"name" : "q_enc_fifo[0]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[1]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[2]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[3]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[4]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[5]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[6]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[7]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[8]",
+					"strict" : false
+				},
+				{
+					"name" : "q_enc_fifo[9]",
+					"strict" : false
+				},
+				{
+					"name" : "empty_enc_fifo",
 					"strict" : false
 				},
 				{
@@ -56,7 +96,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "rreq_itl_fifo",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "rreq_enc_fifo",
 					"strict" : false
 				},
 				{
