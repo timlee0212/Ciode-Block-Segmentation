@@ -18,12 +18,20 @@ module cb_seg(
 
 	 //Interleaver FIFO Ports
 //	 input wire rreq_itl_fifo,
+<<<<<<< Updated upstream
 //	 output wire[4:0] q_itl_fifo, //{data, size, start}
+=======
+//	 output wire[9:0] q_itl_fifo, //{data[7:0], size, start}
+>>>>>>> Stashed changes
 //	 output wire empty_itl_fifo,
 //	 
 //	 //Encoder FIFO Ports
 //	 input wire rreq_enc_fifo,
+<<<<<<< Updated upstream
 //	 output wire[2:0] q_enc_fifo,  //{data, size, start, crc, filling}
+=======
+//	 output wire[9:0] q_enc_fifo,  //{data[7:0], size, start}
+>>>>>>> Stashed changes
 //	 output wire empty_enc_fifo
 	 
 	 //Debug
@@ -32,9 +40,17 @@ module cb_seg(
 
 wire[7:0] data_fifo_out;
 wire data_fifo_rd, data_fifo_empty, size_fifo_rd, size_fifo_empty;
+<<<<<<< Updated upstream
 //
 //wire start, crc, filling, cb_size, cb_data;
 wire wreq_itl_fifo, wreq_enc_fifo;
+=======
+
+//wire start, cb_size;
+//wire[7:0] cb_data;
+
+//wire wreq_itl_fifo, wreq_enc_fifo;
+>>>>>>> Stashed changes
 
 wire[1:0] crc_shift_mux_sel;
 
@@ -94,10 +110,17 @@ crc24 crc_mod(
     .crc_out(crc_out)
 );
 
+<<<<<<< Updated upstream
 //itl_fifo	itl_fifo_inst (
 //	.aclr (reset),
 //	.clock (clk),
 //	.data ({cb_data, cb_size, start, crc, filling}),
+=======
+//fifo_10bits	itl_fifo_inst (
+//	.aclr (reset),
+//	.clock (clk),
+//	.data ({cb_data, cb_size, start}),
+>>>>>>> Stashed changes
 //	.rdreq (rreq_itl_fifo),
 //	.wrreq (wreq_itl_fifo),
 //	.empty (empty_itl_fifo),
@@ -105,7 +128,11 @@ crc24 crc_mod(
 //	.q (q_itl_fifo)
 //);
 //
+<<<<<<< Updated upstream
 //enc_fifo	enc_fifo_inst (
+=======
+//fifo_10bits	enc_fifo_inst (
+>>>>>>> Stashed changes
 //	.aclr (reset),
 //	.clock (clk),
 //	.data ({cb_data, cb_size, start}),
@@ -139,8 +166,8 @@ data_fsm datapath_control_unit(
 
 	.block_size(cb_size),
 	
-	.wreq_itl_fifo(wreq_itl_fifo),
-	.wreq_enc_fifo(wreq_enc_fifo),
+//	.wreq_itl_fifo(wreq_itl_fifo),
+//	.wreq_enc_fifo(wreq_enc_fifo),
 
 	.start(start),
 	.filling(filling),
