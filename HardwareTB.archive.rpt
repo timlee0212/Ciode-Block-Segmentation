@@ -1,5 +1,5 @@
 Archive Project report for HardwareTB
-Wed Apr 08 18:07:50 2020
+Mon Apr 20 18:41:46 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,9 +35,9 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Wed Apr 08 18:07:50 2020 ;
+; Archive Project Status ; Successful - Mon Apr 20 18:41:46 2020 ;
 ; Revision Name          ; HardwareTB                            ;
-; Top-level Entity Name  ; mem_tb_cb_seg                         ;
+; Top-level Entity Name  ; top_with_pll                          ;
 ; Family                 ; Cyclone V                             ;
 +------------------------+---------------------------------------+
 
@@ -53,16 +53,16 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory E:/Courses/ECE559/Code-Block-Segmentation/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/Users/Timlee/Desktop/CB_HardwareTB.qar'
+Info: Generated archive 'C:/Users/Timlee/Desktop/CBSEG_htb_par_200MHz.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'HardwareTB.archive.rpt'
 Info (23030): Evaluation of Tcl script f:/quartus/quartus/common/tcl/apps/qpm/qar.tcl was successful
-Info: Quartus Prime Shell was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Wed Apr 08 18:07:50 2020
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:01:03
+Info: Quartus Prime Shell was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4833 megabytes
+    Info: Processing ended: Mon Apr 20 18:41:46 2020
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:45
 
 
 +--------------------------------------------------+
@@ -73,33 +73,31 @@ Info: Quartus Prime Shell was successful. 0 errors, 2 warnings
 ; CodeBlockSegmentation.qpf                        ;
 ; f:/quartus/quartus/bin64/assignment_defaults.qdf ;
 ; HardwareTB.qsf                                   ;
-; IP/counter_5bits.qip                             ;
-; IP/counter_5bits.v                               ;
-; IP/counter_5bits_inst.v                          ;
-; IP/counter_16bits.qip                            ;
-; IP/counter_16bits.v                              ;
-; IP/counter_16bits_bb.v                           ;
-; IP/counter_16bits_inst.v                         ;
+; IP/counter_10bits.qip                            ;
+; IP/counter_10bits.v                              ;
 ; IP/crc_shift_mux.qip                             ;
 ; IP/crc_shift_mux.v                               ;
 ; IP/crc_shift_mux_inst.v                          ;
-; IP/enc_fifo.qip                                  ;
-; IP/enc_fifo.v                                    ;
-; IP/enc_fifo_inst.v                               ;
-; IP/fifo16.qip                                    ;
-; IP/fifo16.v                                      ;
-; IP/fifo20.qip                                    ;
-; IP/fifo20.v                                      ;
+; IP/fifo12.qip                                    ;
+; IP/fifo12.v                                      ;
+; IP/fifo14.qip                                    ;
+; IP/fifo14.v                                      ;
+; IP/fifo_10bits.qip                               ;
+; IP/fifo_10bits.v                                 ;
 ; IP/fifo_tb.qip                                   ;
 ; IP/fifo_tb.v                                     ;
 ; IP/fifo_tb_inst.v                                ;
-; IP/itl_fifo.qip                                  ;
-; IP/itl_fifo.v                                    ;
-; IP/itl_fifo_bb.v                                 ;
-; IP/itl_fifo_inst.v                               ;
 ; IP/mux_ip.qip                                    ;
 ; IP/mux_ip.v                                      ;
 ; IP/mux_ip_inst.v                                 ;
+; IP/PLL.cmp                                       ;
+; IP/PLL.qip                                       ;
+; IP/PLL.sip                                       ;
+; IP/PLL.spd                                       ;
+; IP/PLL.v                                         ;
+; IP/PLL/PLL_0002.qip                              ;
+; IP/PLL/PLL_0002.v                                ;
+; IP/PLL_sim/PLL.vo                                ;
 ; IP/ref_large.qip                                 ;
 ; IP/ref_large.v                                   ;
 ; IP/ref_large_inst.v                              ;
@@ -124,6 +122,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 2 warnings
 ; mem/input_vector.mif                             ;
 ; mem/output_vector1.mif                           ;
 ; mem/output_vector2.mif                           ;
+; pll_top.v                                        ;
 ; src/crc24.v                                      ;
 ; src/CRC_size.sv                                  ;
 ; src/data_path_control.v                          ;

@@ -85,13 +85,13 @@ parameter IDLE			=	6'b000000,
 			 WRITE_FIN1	=	6'b010001,
 			 WRITE_FIN2	= 	6'b100001;
 
-reg[15:0] cnt_write_in;
+reg[9:0] cnt_write_in;
 reg cnt_write_en, cnt_write_load;
 reg[5:0] state_reg, next_state;
 
-wire[15:0] cnt_write_q;
+wire[9:0] cnt_write_q;
 
-counter_16bits	cnt_write (
+counter_10bits	cnt_write (
 	.aclr ( reset),
 	.clock ( clk ),
 	.cnt_en ( cnt_write_en ),
@@ -119,7 +119,7 @@ always@(*) begin
 				else next_state <= IDLE;
 		WRITE_SIZE: next_state <= WAIT_MEM;
 		WAIT_MEM: next_state <= WRITE_DATA;
-		WRITE_DATA: if(cnt_write_q==16'h0000) next_state <= WRITE_FIN1;
+		WRITE_DATA: if(cnt_write_q==10'h0000) next_state <= WRITE_FIN1;
 						else next_state <= WRITE_DATA;
 		WRITE_FIN1: next_state <= WRITE_FIN2;
 		WRITE_FIN2: next_state <= IDLE;
@@ -130,18 +130,18 @@ end
 always@(*) begin
 wreq_size 		=		1'b0;
 wreq_data 		= 	1'b0;
-size				=		16'h0;
+size				=		10'h0;
 cnt_write_en	=		1'b0;
-cnt_write_in	=		16'h0;
+cnt_write_in	=		10'h0;
 cnt_write_load	=		1'b0;
 
 	case(state_reg)
 		IDLE: begin
-			cnt_write_in  	= 16'd0877;
+			cnt_write_in  	= 10'd877;
 			cnt_write_load =1'b1;		
 		end
 		WRITE_SIZE: begin 
-			size				= 16'd0878;
+			size				= 12'd878;
 			wreq_size		= 1'b1;
 			cnt_write_en 	= 1'b1;
 		end
@@ -179,11 +179,11 @@ parameter IDLE 		= 8'b00000000,
 			 WAIT_F1		= 8'b01000001,
 			 WAIT_F2		= 8'b10000001;
 
-reg[15:0] cnt_read_in;
+reg[9:0] cnt_read_in;
 reg cnt_read_en, cnt_read_load;
 reg[7:0] state_reg, next_state;
 
-wire[15:0] cnt_read_q;
+wire[9:0] cnt_read_q;
 
 wire[7:0] ref_s, ref_l;
 
@@ -195,7 +195,7 @@ wire tg_q, buf_size;
 
 assign test_good = tg_q;
 
-counter_16bits	cnt_read(
+counter_10bits	cnt_read(
 	.aclr ( reset),
 	.clock ( clk ),
 	.cnt_en ( cnt_read_en ),
@@ -287,9 +287,9 @@ always@(*) begin
 		WAIT_REG1: next_state <= WAIT_REG2;
 		WAIT_REG2: if(buf_size==1'b1) next_state <= READ_LARGE;
 					  else next_state <= READ_SMALL;
-		READ_LARGE: if(cnt_read_q==16'h0000) next_state <= WAIT_F1;
+		READ_LARGE: if(cnt_read_q==10'h0000) next_state <= WAIT_F1;
 						else next_state <= READ_LARGE;
-		READ_SMALL: if(cnt_read_q==16'h0000) next_state <= WAIT_F1;
+		READ_SMALL: if(cnt_read_q==10'h0000) next_state <= WAIT_F1;
 						else next_state <= READ_SMALL;
 		WAIT_F1:	next_state <= WAIT_F2;
 		WAIT_F2: next_state <= IDLE;
@@ -302,7 +302,7 @@ test_end			<= 	1'b0;
 tg_in 			<= 	1'b1;
 tg_load			<= 	1'b0;
 cnt_read_en		<=		1'b0;
-cnt_read_in		<=		16'h0;
+cnt_read_in		<=		10'h0;
 cnt_read_load	<=		1'b0;
 buf_load 		<= 	1'b0;
 buf_in 			<= 	1'b0;
@@ -311,17 +311,17 @@ buf_in 			<= 	1'b0;
 		IDLE: begin
 			tg_in 	<= 1'b1;
 			tg_load	<= 1'b1;
-			cnt_read_in 	<= 16'd0;
+			cnt_read_in 	<= 10'd0;
 			cnt_read_load	<= 1'b1;
 		end
 		LOAD_SIZE: begin
 			if(size==1'b1) begin
-				cnt_read_in 	<= 16'd0767;
+				cnt_read_in 	<= 10'd0767;
 				cnt_read_load	<= 1'b1;
 				buf_in			<= 1'b1;
 			end
 			else begin
-				cnt_read_in 	<= 16'd0131;
+				cnt_read_in 	<= 10'd0131;
 				cnt_read_load	<= 1'b1;
 				buf_in			<= 1'b0;
 			end
